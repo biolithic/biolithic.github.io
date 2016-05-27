@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FFDEAD">
+    <meta name="msapplication-TileColor" content="#FFDEAD">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+
+    <link rel="icon" type="image/png" href="android-chrome-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="android-chrome-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="android-chrome-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="android-chrome-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="android-chrome-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <meta name="msapplication-TileImage" content="mstile-70x70.png">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
+    <meta name="msapplication-TileImage" content="mstile-150x150.png">
+    <meta name="msapplication-TileImage" content="mstile-310x150.png">
+    <meta name="msapplication-TileImage" content="mstile-310x310.png">
+
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>html5.addElements('todo')</script>
+<![endif]-->
+    <meta name="author" content="Andy Martha">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="apple-mobile-web-app-title" content="Portfolio of Andy Martha">
+    <meta name="application-name" content="Portfolio of Andy Martha">
+    <title>Portfolio of Andy Martha, front-end web developer for hire</title>
+    <meta property="og:title" content="Portfolio of Andy Martha" />
+    <meta property="og:image" content="apple-touch-icon-114x114.png" />
+    <meta property="og:description" content="Portfolio of Andy Martha, front-end web developer for hire" />
+    <script>
+networkstatus = "a defined variable";
+if (navigator.onLine) {
+  networkstatus = "online";
+}
+
+window.addEventListener("online", function() {
+  networkstatus = "online";
+  console.log("You are now online");
+}, true);
+
+window.addEventListener("offline", function() {
+  networkstatus = "offline";
+  console.log("You are now offline");
+}, true);
+
+document.addEventListener("online", function() {
+  networkstatus = "online";
+  console.log("You are now online");
+}, true);
+
+document.addEventListener("offline", function() {
+  networkstatus = "offline";
+  console.log("You are now offline");
+}, true);
+</script>
+
+<style>
+* {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+}
+
+body, html {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: #68B3C8;
+    -webkit-transition: all 150ms linear;
+    -moz-transition: all 150ms linear;
+    -o-transition: all 150ms linear;
+    -ms-transition: all 150ms linear;
+    transition: all 150ms linear;
+}
+
+a:hover,
+a:focus {
+    color: #3091B2;
+    text-decoration: none;
+}
+
+a:focus,
+a:active,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    outline: 0;
+}
+
+h4:hover,
+h4:focus,
+h4:active {
+    text-decoration: line-through;
+}
+
+
+svg {
+  height: 50px;
+}
+
+h2 {
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+h4 {
+  cursor: pointer;
+}
+
+.flex-nav ul {
+  list-style: none;
+  background-color: navajowhite;
+  margin: 0;
+  padding: 0;
+  padding-left: 3px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Flex Item */
+.flex-nav li {
+    flex: 3;
+}
+.flex-nav .social {
+    flex: 1;
+}
+
+.me {
+  width: 50px; height: 50px; border-radius: 50px;
+}
+
+.myname {
+  line-height: 3;
+}
+
+.element, .element2 {
+  shape-outside: circle(50%);
+  -webkit-shape-outside: circle(50%);
+  shape-image-threshold: 0.5;
+  -webkit-shape-image-threshold: 0.5;
+  clip-path: circle(50%);
+  -webkit-clip-path: circle(50%);
+  float: left;
+  width: 300px;
+  height: 300px;
+  background-image: url(images/coffee.jpg);
+  background-size: cover;
+  display: block;
+  margin-right: 20px;
+}
+
+h5 {
+  color: navajowhite;
+  text-align: left;
+  display: block;
+  line-height: 1.5;
+}
+
+.php, .js {
+    float: left;
+    width: 50%;
+    clear: none;
+    background: rgba(162,66,8,1);
+    background: rgba(124,70,46,1);
+    background: -moz-linear-gradient(top, rgba(124,70,46,1) 0%, rgba(37,17,10,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(124,70,46,1)), color-stop(100%, rgba(37,17,10,1)));
+    background: -webkit-linear-gradient(top, rgba(124,70,46,1) 0%, rgba(37,17,10,1) 100%);
+    background: -o-linear-gradient(top, rgba(124,70,46,1) 0%, rgba(37,17,10,1) 100%);
+    background: -ms-linear-gradient(top, rgba(124,70,46,1) 0%, rgba(37,17,10,1) 100%);
+    background: linear-gradient(to bottom, rgba(124,70,46,1) 0%, rgba(37,17,10,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7c462e', endColorstr='#25110a', GradientType=0 );
+    color: navajowhite;
+    -webkit-box-shadow: -1px -2px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px -2px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px -2px 4px 0px rgba(0,0,0,0.75);
+}
+
+.js, .element2 {
+    float: right;
+}
+
+.php h3 {
+  padding-left: 10px;
+}
+
+.js h3 {
+  padding-right: 10px;
+}
+
+.js-div {
+  display: block; text-align: right; height: 100%;
+}
+
+.desc-outer {
+  margin: 0 auto; text-align: center; clear: both; width: 100%;
+}
+
+.desc-inner {
+  width: 500px;
+  padding: 20px;
+  margin: 0 auto;
+  height: auto;
+  min-height: 500px;
+}
+
+.desc-inner img {
+  float: left;
+  width: 318px;
+  height: auto;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+@media all and (max-width: 1000px) {
+    .wd {
+      display: none;
+    }
+
+    .flex-nav ul {
+        flex-wrap: wrap;
+    }
+    .flex-nav li {
+            flex: 0 0 10%;
+    }
+    .flex-nav .myname {
+            flex: 0 0 15%;
+    }
+    .flex-nav .social {
+            flex: 0 0 10%;
+    }
+
+  .element, .element2 {
+    width: 250px;
+    height: 250px;
+  }
+
+  h4 {
+    font-size: 80%;
+  }
+
+}
+
+@media all and (max-width: 650px) {
+  .php, .js {
+  width: 100%;
+  }
+
+  .desc-inner {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 100%;
+  }
+
+  h5 {
+    color: #000;
+    float: left;
+  }
+
+  .desc-outer {
+  background: initial;
+  }
+
+
+.flex-nav ul {
+  display: block;
+}
+
+.flex-nav li {
+    width: 19%;
+    float: left;
+}
+
+.flex-nav svg {
+  margin-right: -25px;
+  width: 55px;
+}
+
+}
+
+@media all and (max-width: 360px) {
+  .element, .element2 {
+    width: 150px;
+    height: 150px;
+  }
+
+  h4 {
+    font-size: 80%;
+  }
+}
+
+@media all and (min-width: 650px) {
+  body {
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(37,17,10,1) 25%, rgba(37,17,10,1) 75%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(25%, rgba(37,17,10,1)), color-stop(75%, rgba(37,17,10,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(37,17,10,1) 25%, rgba(37,17,10,1) 75%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(37,17,10,1) 25%, rgba(37,17,10,1) 75%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(37,17,10,1) 25%, rgba(37,17,10,1) 75%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(37,17,10,1) 25%, rgba(37,17,10,1) 75%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+  }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-default flex-nav" role="navigation">
+<ul>
+<li><img src="images/dressedupandy.jpg" class="me" alt="photo of Andy Martha" width="50" height="50" /></li>
+<li class="myname">OSN<span class="wd"> - team!</span></li>
+<li class="social"><a href="http://twitter.com/biolithic">
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="svg2" xml:space="preserve" height="148.12" width="182.26" version="1.1" viewBox="0 0 182.66667 150.66667"><metadata id="metadata8"><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/></cc:Work></rdf:RDF></metadata><defs id="defs6"><clipPath id="clipPath20" clipPathUnits="userSpaceOnUse"><path id="path18" d="m0 10.012h1366.9v1110.9h-1366.9z"/></clipPath></defs><g id="g10" transform="matrix(1.3333 0 0 -1.3333 0 150.67)"><g id="g12" transform="scale(.1)"><g id="g14"><g id="g16" clip-path="url(#clipPath20)"><path id="path22" d="m1366.9 989.39c-50.27-22.309-104.33-37.387-161.05-44.18 57.89 34.723 102.34 89.679 123.28 155.15-54.18-32.15-114.18-55.47-178.09-68.04-51.13 54.49-124.02 88.55-204.68 88.55-154.89 0-280.43-125.55-280.43-280.43 0-21.988 2.457-43.398 7.258-63.91-233.08 11.68-439.72 123.36-578.04 293.01-24.141-41.4-37.969-89.567-37.969-140.97 0-97.308 49.489-183.13 124.76-233.44-45.969 1.437-89.218 14.058-127.03 35.078-0.043-1.18-0.043-2.348-0.043-3.52 0-135.9 96.68-249.22 224.96-275-23.512-6.41-48.281-9.8-73.86-9.8-18.089 0-35.628 1.711-52.781 5 35.711-111.41 139.26-192.5 262-194.77-96.058-75.23-216.96-120.04-348.36-120.04-22.621 0-44.961 1.332-66.918 3.91 124.16-79.568 271.55-125.98 429.94-125.98 515.82 0 797.86 427.31 797.86 797.93 0 12.153-0.28 24.223-0.79 36.25 54.77 39.571 102.31 88.95 139.93 145.2" fill="#55ACEE"/></g></g></g></g></svg>
+</a></li>
+
+<li class="social"><a href="http://linkedin.com/in/andymartha">
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2" sodipodi:version="0.32" inkscape:version="0.47 r22583" sodipodi:docname="linkedin.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
+<sodipodi:namedview showgrid="false" inkscape:window-maximized="0" pagecolor="#ffffff" bordercolor="#666666" id="base" borderopacity="1.0" inkscape:cx="138.80354" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.24748737" inkscape:cy="94.798647" inkscape:document-units="px" inkscape:current-layer="layer1" inkscape:window-width="853" inkscape:window-height="674" inkscape:window-x="1" inkscape:window-y="281">
+  </sodipodi:namedview>
+<g id="layer1" transform="translate(-373.642,-318.344)" inkscape:label="Layer 1" inkscape:groupmode="layer">
+
+    <path id="rect1942" inkscape:export-filename="C:\Documents and Settings\Molumen\Desktop\path3511111.png" inkscape:export-xdpi="7.7063322" inkscape:export-ydpi="7.7063322" fill="#1D8CB5" d="   M583.659,328.849H419.625c-19.599,0-35.487,15.888-35.487,35.487v164.015c0,19.599,15.888,35.486,35.487,35.486h164.033   c19.599,0,35.487-15.888,35.487-35.486V364.337C619.146,344.738,603.257,328.849,583.659,328.849z"/>
+
+    <linearGradient id="path1950_1_" gradientUnits="userSpaceOnUse" x1="-808.8727" y1="199.8918" x2="-860.5692" y2="49.2029" gradientTransform="matrix(-0.5915 0 0 -0.5915 -34.5417 412.5453)">
+    <stop offset="0" style="stop-color:#FFFFFF"/>
+    <stop offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+  </linearGradient>
+
+    <path id="path1950" inkscape:export-filename="C:\Documents and Settings\Molumen\Desktop\path3511111.png" inkscape:export-xdpi="7.7063322" sodipodi:nodetypes="ccccsssc" inkscape:export-ydpi="7.7063322" opacity="0.7811" fill="url(#path1950_1_)" enable-background="new    " d="   M557.056,338.895H446.227c-29.337,0-52.955,23.81-52.955,53.385v108.127c0.95,23.087,4.603,8.491,11.555-17.075   c8.081-29.713,34.396-55.682,66.445-75.145c24.461-14.855,51.84-24.341,101.679-25.244   C601.216,382.432,598.721,346.26,557.056,338.895z"/>
+</g>
+<g id="layer1_1_" transform="translate(-200.55198,-393.96227)" inkscape:label="Layer 1" inkscape:groupmode="layer">
+  <g id="g3019" transform="matrix(1.018827,0,0,-1.018827,170.5996,498.03288)">
+    <path id="path28_1_" inkscape:connector-curvature="0" fill="#FFFFFF" d="M109.495-101.774V2.533H74.828v-104.307H109.495z     M92.168,16.775c12.081,0,19.612,8.01,19.612,18.021c-0.224,10.233-7.531,18.021-19.385,18.021    c-11.864,0-19.615-7.788-19.615-18.021c0-10.011,7.521-18.021,19.159-18.021H92.168L92.168,16.775z"/>
+    <path id="path30_1_" inkscape:connector-curvature="0" fill="#FFFFFF" d="M128.681-101.774h34.673v58.249    c0,3.119,0.226,6.235,1.143,8.462c2.5,6.232,8.209,12.681,17.784,12.681c12.547,0,17.562-9.568,17.562-23.588v-55.804h34.666    v59.81c0,32.039-17.1,46.946-39.913,46.946c-18.701,0-26.915-10.45-31.476-17.571h0.234V2.533h-34.673    C129.141-7.253,128.681-101.774,128.681-101.774L128.681-101.774z"/>
+  </g>
+</g>
+</svg>
+  </a></li>
+
+<li class="social"><a href="http://github.com/biolithic">
+<svg aria-hidden="true" class="octicon octicon-mark-github" height="50" role="img" version="1.1" viewBox="0 0 16 16" width="50"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+</a></li>
+</ul>
+</nav>
+
+<h2>OSN TEAM</h2>
+
+<div class="php">
+<h3>PHP environment</h3>
+<div class="element"></div>
+<p>
+<h4 id="a1">Drupal Theming</h4>
+<h4 id="a2">BackdropCMS Theming</h4>
+<h4 id="a3">Wordpress Theming</h4>
+<h4 id="a4">Development</h4>
+<h4 id="a5">Support Work</h4>
+<h4 id="a6">Open-Source</h4>
+<h4 id="a7">Basic Cart Plus</h4>
+<h4 id="a8">History</h4>
+</p>
+</div>
+<div class="js">
+<h3 style="text-align:right;">Javascript environment</h3>
+<div class="element2"></div>
+<div class="js-div">
+<h4 id="a9">Riot</h4>
+<h4 id="a10">React</h4>
+<h4 id="a11">Angular</h4>
+<h4 id="a12">JQuery</h4>
+<h4 id="a13">Hybrid</h4>
+<h4 id="a14">UI/UX</h4>
+<h4 id="a15">Creative Design</h4>
+<h4 id="a16">Quiz</h4>
+</div>
+</div>
+
+<div class="desc-outer">
+<div class="desc-inner">
+<a href="#" id="l1">
+<img src="images/perf/perf1.png" alt="Thumbnail Image" width="318" id="i1">
+<img src="images/perf/perf2.png" alt="Thumbnail Image" width="318" id="i2"></a>
+<h5 id="t1">I produce highly optimized performances.  Under 2 second loading times and very touch-friendly even while using CMS, social media logins, API requests, animations, Javascripts, etc...</h5>
+
+<a href="#" id="l2">
+<img src="images/perf/perf3.png" alt="Thumbnail Image" width="318" id="i3">
+<img src="images/perf/perf4.png" alt="Thumbnail Image" width="318" id="i4"></a>
+<h5 id="t2">I write about wisdom from experience in <a href="https://dev-backdropthemes.pantheon.io/node/39" target="_blank">acceleratating the theming process</a>, <a href="https://dev-backdropthemes.pantheon.io/node/136" target="_blank">fast progressive web apps</a> and <a href="https://dev-backdropthemes.pantheonsite.io/docs14" target="_blank"> web standards to make DX and UX progress happen faster.</a>
+</h5>
+</div>
+</div>
+
+</div>
+
+<script async>
+document.getElementById("a1").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[0].l1;
+    document.getElementById("l2").href = PROPERTIES[0].l2;
+    document.getElementById("i1").src = PROPERTIES[0].i1;
+    document.getElementById("i2").src = PROPERTIES[0].i2;
+    document.getElementById("i3").src = PROPERTIES[0].i3;
+    document.getElementById("i4").src = PROPERTIES[0].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[0].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[0].t2;
+    return false;
+  };
+
+document.getElementById("a2").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[1].l1;
+    document.getElementById("l2").href = PROPERTIES[1].l2;
+    document.getElementById("i1").src = PROPERTIES[1].i1;
+    document.getElementById("i2").src = PROPERTIES[1].i2;
+    document.getElementById("i3").src = PROPERTIES[1].i3;
+    document.getElementById("i4").src = PROPERTIES[1].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[1].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[1].t2;
+    return false;
+  };
+
+document.getElementById("a3").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[2].l1;
+    document.getElementById("l2").href = PROPERTIES[2].l2;
+    document.getElementById("i1").src = PROPERTIES[2].i1;
+    document.getElementById("i2").src = PROPERTIES[2].i2;
+    document.getElementById("i3").src = PROPERTIES[2].i3;
+    document.getElementById("i4").src = PROPERTIES[2].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[2].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[2].t2;
+    return false;
+  };
+
+document.getElementById("a4").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[3].l1;
+    document.getElementById("l2").href = PROPERTIES[3].l2;
+    document.getElementById("i1").src = PROPERTIES[3].i1;
+    document.getElementById("i2").src = PROPERTIES[3].i2;
+    document.getElementById("i3").src = PROPERTIES[3].i3;
+    document.getElementById("i4").src = PROPERTIES[3].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[3].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[3].t2;
+    return false;
+  };
+
+///
+
+document.getElementById("a5").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[4].l1;
+    document.getElementById("l2").href = PROPERTIES[4].l2;
+    document.getElementById("i1").src = PROPERTIES[4].i1;
+    document.getElementById("i2").src = PROPERTIES[4].i2;
+    document.getElementById("i3").src = PROPERTIES[4].i3;
+    document.getElementById("i4").src = PROPERTIES[4].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[4].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[4].t2;
+    return false;
+  };
+
+document.getElementById("a6").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[5].l1;
+    document.getElementById("l2").href = PROPERTIES[5].l2;
+    document.getElementById("i1").src = PROPERTIES[5].i1;
+    document.getElementById("i2").src = PROPERTIES[5].i2;
+    document.getElementById("i3").src = PROPERTIES[5].i3;
+    document.getElementById("i4").src = PROPERTIES[5].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[5].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[5].t2;
+    return false;
+  };
+
+document.getElementById("a7").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[6].l1;
+    document.getElementById("l2").href = PROPERTIES[6].l2;
+    document.getElementById("i1").src = PROPERTIES[6].i1;
+    document.getElementById("i2").src = PROPERTIES[6].i2;
+    document.getElementById("i3").src = PROPERTIES[6].i3;
+    document.getElementById("i4").src = PROPERTIES[6].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[6].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[6].t2;
+    return false;
+  };
+
+document.getElementById("a8").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[7].l1;
+    document.getElementById("l2").href = PROPERTIES[7].l2;
+    document.getElementById("i1").src = PROPERTIES[7].i1;
+    document.getElementById("i2").src = PROPERTIES[7].i2;
+    document.getElementById("i3").src = PROPERTIES[7].i3;
+    document.getElementById("i4").src = PROPERTIES[7].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[7].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[7].t2;
+    return false;
+  };
+
+///
+
+document.getElementById("a9").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[8].l1;
+    document.getElementById("l2").href = PROPERTIES[8].l2;
+    document.getElementById("i1").src = PROPERTIES[8].i1;
+    document.getElementById("i2").src = PROPERTIES[8].i2;
+    document.getElementById("i3").src = PROPERTIES[8].i3;
+    document.getElementById("i4").src = PROPERTIES[8].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[8].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[8].t2;
+    return false;
+  };
+
+document.getElementById("a10").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[9].l1;
+    document.getElementById("l2").href = PROPERTIES[9].l2;
+    document.getElementById("i1").src = PROPERTIES[9].i1;
+    document.getElementById("i2").src = PROPERTIES[9].i2;
+    document.getElementById("i3").src = PROPERTIES[9].i3;
+    document.getElementById("i4").src = PROPERTIES[9].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[9].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[9].t2;
+    return false;
+  };
+
+document.getElementById("a11").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[10].l1;
+    document.getElementById("l2").href = PROPERTIES[10].l2;
+    document.getElementById("i1").src = PROPERTIES[10].i1;
+    document.getElementById("i2").src = PROPERTIES[10].i2;
+    document.getElementById("i3").src = PROPERTIES[10].i3;
+    document.getElementById("i4").src = PROPERTIES[10].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[10].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[10].t2;
+    return false;
+  };
+
+document.getElementById("a12").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[11].l1;
+    document.getElementById("l2").href = PROPERTIES[11].l2;
+    document.getElementById("i1").src = PROPERTIES[11].i1;
+    document.getElementById("i2").src = PROPERTIES[11].i2;
+    document.getElementById("i3").src = PROPERTIES[11].i3;
+    document.getElementById("i4").src = PROPERTIES[11].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[11].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[11].t2;
+    return false;
+  };
+
+//
+
+document.getElementById("a13").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[12].l1;
+    document.getElementById("l2").href = PROPERTIES[12].l2;
+    document.getElementById("i1").src = PROPERTIES[12].i1;
+    document.getElementById("i2").src = PROPERTIES[12].i2;
+    document.getElementById("i3").src = PROPERTIES[12].i3;
+    document.getElementById("i4").src = PROPERTIES[12].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[12].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[12].t2;
+    return false;
+  };
+
+document.getElementById("a14").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[13].l1;
+    document.getElementById("l2").href = PROPERTIES[13].l2;
+    document.getElementById("i1").src = PROPERTIES[13].i1;
+    document.getElementById("i2").src = PROPERTIES[13].i2;
+    document.getElementById("i3").src = PROPERTIES[13].i3;
+    document.getElementById("i4").src = PROPERTIES[13].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[13].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[13].t2;
+    return false;
+  };
+
+document.getElementById("a15").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[14].l1;
+    document.getElementById("l2").href = PROPERTIES[14].l2;
+    document.getElementById("i1").src = PROPERTIES[14].i1;
+    document.getElementById("i2").src = PROPERTIES[14].i2;
+    document.getElementById("i3").src = PROPERTIES[14].i3;
+    document.getElementById("i4").src = PROPERTIES[14].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[14].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[14].t2;
+    return false;
+  };
+
+document.getElementById("a16").onclick = function() {
+    document.getElementById("l1").href = PROPERTIES[15].l1;
+    document.getElementById("l2").href = PROPERTIES[15].l2;
+    document.getElementById("i1").src = PROPERTIES[15].i1;
+    document.getElementById("i2").src = PROPERTIES[15].i2;
+    document.getElementById("i3").src = PROPERTIES[15].i3;
+    document.getElementById("i4").src = PROPERTIES[15].i4;
+    document.getElementById("t1").innerHTML = PROPERTIES[15].t1;
+    document.getElementById("t2").innerHTML = PROPERTIES[15].t2;
+    return false;
+  };
+
+var PROPERTIES = [
+   {
+      // Drupal Theming
+      "l1":"http://stelterstaging.ingeniuxondemand.com/east-central-university",
+      "l2":"http://blushsalon.com",
+      "i1":"images/east1.png",
+      "i2":"images/east2.png",
+      "i3":"images/blush1.png",
+      "i4":"images/blush2.png",
+      "t1":"<p>You probably want to use a open-source content management system to organize and systemize your communication and business process.  I can help!</p><p>East Central University wanted to encourage and increase donations for research and scholarship in alternative methods, such as through stocks, donated life insurance, existing real estate, charitable gift annuities, and the like. </p><p>I followed their existing style guide to a T while building out the new sections of the site which educate and direct site users towards the proper resources for connections and donations. The new micro-sites for the Stelter Company are easy to read and navigate on mobile devices through utilization of CSS, JQuery, and Bootstrap in the right way.</p>",
+      "t2":"<hr /><p>Typography and colors that fit the target demographic</p><p>Appropriate mobile zooming and size</p><p>Easy to use design for the top three actions analytics provided.</p>"
+   },
+
+   // BackdropCMS Theming
+   {
+      "l1":"http://oneshotnation.x10.bz/",
+      "l2":"http://dev-backdropthemes.pantheonsite.io/",
+      "i1":"images/afterlight1.png",
+      "i2":"images/zurb6.png",
+      "i3":"images/materialize1.png",
+      "i4":"images/gdi1.png",
+      "t1":"<p>Backdrop CMS is a fork of Drupal that is something like Drupal 7.5.  Because it contains wisdom learned from Drupal 7, workflow tools from Drupal 8, and an extremely to-the-point development process, I really like developing for it for publishing-focused websites.  I have tranlated popular CSS and grid frameworks into semantic and accessible open-source HTML5 themes using modern Javascript workflow tools like NPM, Grunt, Gulp, Sass, Bourbon/Neat, and more.</p>",
+      "t2":"<hr /><p>I have contributed several flexbox-based, responsive, 2016-trending Layout collections for Backdrop CMS using the JuicedCSS micro-grid and the Zurb Foundation 6 grid.</p>"
+   },
+
+   // Wordpress Theming
+   {
+      "l1":"http://develop.auburn.edu/ways/plannedgiving/",
+      "l2":"http://stelterstaging.ingeniuxondemand.com/pg-unthsc",
+      "i1":"images/auburn2.png",
+      "i2":"images/auburn1.png",
+      "i3":"images/unthsc1.png",
+      "i4":"images/unthsc2.png",
+      "t1":"<p>Auburn University and UNT Health Science Center wanted to encourage and increase donations for research and scholarship in alternative methods, such as through stocks, donated life insurance, existing real estate, charitable gift annuities, and the like. </p><p>I followed their existing style guide to a T while building out the new sections of the site which educate and direct site users towards the proper resources for connections and donations. The new micro-sites for the Stelter Company are easy to read and navigate on mobile devices through utilization of CSS, JQuery, and Bootstrap in the right way.</p>",
+      "t2":""
+   },
+
+   // Module Development
+   {
+      "l1":"https://github.com/backdrop-contrib/flexviews",
+      "l2":"https://github.com/biolithic/php_xml",
+      "i1":"images/spacer.gif",
+      "i2":"images/spacer.gif",
+      "i3":"images/spacer.gif",
+      "i4":"images/spacer.gif",
+      "t1":"<p>I can write custom Drupal modules in PHP and MySQL, specializing in Drupal Commerce.</p><p>For ATI Physical Therapy, I wrote a user credits payment + custom reporting suite for their internal store.  It imports the existing employee list spreadsheet, creates/modifies existing user accounts, provides a simple admin interface for management to give store credits to employees on based work merit or sales opportunity, and allows internal employees to purchase swag with either their credit card or personal store credits.  Management can then download the store credit information selectable by date as a spreadsheet again.</p><p>Another example is the <a href='http://www.postercatalogue.com/'>add to wishlist/ask for price</a> Commerce module, which I wrote to facilitate this client request.</p>",
+      "t2":"<hr /><p>Some other type of PHP modules I have written lately include migrating Youtube XML playlists as individual nodes, or syncing Eventbrite events from the REST API as individual nodes.</p>"
+   },
+
+//
+
+  // Support Work
+   {
+      "l1":"http://www.legacymp.com",
+      "l2":"http://www.jacobsagency.com",
+      "i1":"images/spacer.gif",
+      "i2":"images/spacer.gif",
+      "i3":"images/spacer.gif",
+      "i4":"images/spacer.gif",
+      "t1":"<p>I can come into existing Drupal sites and teams and seamlessly update or fix what's asked of me.  I don't have an attitude that anything is beneath me, and I communicate to solve the issues.  In Chicago, for example, Robert Half Technology, Legacy Marketing Partners and Jacobs Agency have asked me for bug fixes, maintenance and responsive upgrades which I have handled with professionalism.  I am currently working on a small translation project with Partners of the Americas.</p>",
+      "t2":"<hr /><p>I have teaching/mentoring experience in Chicago, and can be very patient and personable with non-programming team members or client-facing consulting positions.  I have served as a Javascript mentor for The Starter League and technology mentor for the job-shadowing program with the Chicago Spark Program.</p>"
+   },
+
+   //Open-Source Contrib
+   {
+      "l1":"https://docs.google.com/spreadsheet/ccc?key=0AmV07dJKoiXDdFBsWV9rRmhKd2JBUUVVSDNCS1VrVXc&usp=sharing#gid=0",
+      "l2":"https://github.com/backdrop-contrib/webform",
+      "i1":"images/spacer.gif",
+      "i2":"images/spacer.gif",
+      "i3":"images/spacer.gif",
+      "i4":"images/spacer.gif",
+      "t1":"<p>When I was in Chicago, I volunteered in helping make local tech meetup websites and meeting logistics, speaking at DrupalCamps and meetups, volunteering for Drupal 8 patch review and documentation at code sprints, participating in hackathons and tech competitions/TechWeek/TechCrunch, and learning from the community.  Contact for more info.</p>",
+      "t2":"<hr /><p>When I was in Chicago, I helped back-port the Drupal 8 code patches to Backdrop CMS and document them.  Click on the Google doc on the left/above for a sample of the work.</p>"
+   },
+
+   // Basic Cart Plus
+   {
+      "l1":"https://github.com/biolithic/basic_cart_plus",
+      "l2":"http://www.andymartha.com/backdropdemo",
+      "i1":"images/cart1.png",
+      "i2":"images/cart2.png",
+      "i3":"images/cart3.png",
+      "i4":"images/cart4.png",
+      "t1":"<p>I took the Basic Cart module from Drupal 7 and implemented payment processors into the cart flow.  Thus, users of Backdrop CMS can install and use secure content-subscriptions and ticket/personal service based e-commerce very easily.",
+      "t2":"<hr /><p>BCP is built mobile first with the latest HTML5, Javascript and Google Chrome field verification/auto-filling, Braintree v.Zero or the latest Stripe libraries in a slim, choose-your-piece architecture.</p>"
+   },
+
+   // History
+   {
+      "l1":"#",
+      "l2":"#",
+      "i1":"images/history/psych1.png",
+      "i2":"images/history/pcasales1.png",
+      "i3":"images/history/tablettuners1.png",
+      "i4":"images/history/dejesus4mayor.gif",
+      "t1":"<p>I have worked with teams or by myself as a independent contractor in startup, corporate, campaign or educational environments since 2010.  My technology stack has changed every six months or so over the years, but I continue to learn new things and what works and what does not.</p>",
+      "t2":""
+   },
+
+//
+
+    // Riot
+   {
+      "l1":"http://dev-backdropthemes.pantheonsite.io/prestart/",
+      "l2":"https://w2s.firebaseapp.com/",
+      "i1":"images/prestart1.png",
+      "i2":"images/prestart2.png",
+      "i3":"images/w2s1.png",
+      "i4":"images/w2s2.png",
+      "t1":"<p>Riot JS is a virtual DOM based UI library like React from Facebook, but I like working in it better.  I am really productive and produce high performance applications with it.</p><p>I can come into existing mobile projects and make it better.  The Pre-Start Portal, an insurance industry mobile web app for Brown Paper E-Commerce, was built in Angular/AWS/CouchDB/Node but the original developer left without much documentation.</p><p>I came into the project for various cros-browser UI bug fixes and upgrades such as deleting vehicles, taking and filing photos for insurance claims, and some user management tasks.  I completed these through directives, factories, and the scope/digest cycle...aka The Angular Way, so my code/changes just blend in.</p><p>After a while, I migrated the application for performance reasons to a Riot/Firebase/Parse stack.  In 2016, Parse announced it will shut down, so I will be migrating the database to the traditional MySQL through Backdrop CMS REST API.  I am happy with the mobile user experience Riot provides to this photo app.</p>",
+      "t2":"<hr /><p>A geolocation-based application is a standard HTML5 practice app.  For me, it was a coffee finder which showed walking time and photos of the locations that show up.  I originally developed this idea in <a href='http://andymartha.com/w2s2'>Angular1</a>, which I redeveloped in <a href='http://andymartha.com/w2s'>Intel App Framework</a> and offline HTML5 AppCache.  Lately, I remade the app in <a href='https://w2s.firebaseapp.com'>RiotJS</a> and offline HTML5 service workers.  I took the chance to refactor the code into proper observable services and a one-way-flow architecture.  Whenever I am learning a new framework or software pattern, I try to rewrite my coffee finder according to its ideals to see its benefits.</p>"
+   },
+
+   // React
+   {
+      "l1":"https://chismw.firebaseapp.com/",
+      "l2":"http://meytalrocks-biolithic.rhcloud.com/",
+      "i1":"images/chismw1.png",
+      "i2":"images/chismw2.png",
+      "i3":"images/react1.png",
+      "i4":"images/spacer.gif",
+      "t1":"<p>For Social Media Week Chicago conference each year, I have produced an online/offline cross-platform mobile web app which can handle browsing and resharing the hashtags and accounts of the conference and ~140 presentations across Facebook, Google Plus, Twitter, and Instagram seamlessly online or offline.</p><p>Although it can provide a real-time scheduler using Firebase as the database and React as the view layer, the default is React reading and writing from local storage (so that we can scale to conference size easily).  The main feature is a Google Maps based personal scheduler which can map your trip from seminar to seminar to custom event and save it for offline access.</p>",
+      "t2":"<hr /><p>Problem:<br>Popular music artist Meytal Cohen was about to release an expected music album to coincide with a promotion.  How to keep up with fan reaction, and promote the album at this event?</p><p><Solution:<br>Using React.JS and its virtual DOM together with Socket.IO, I made a live feed board of Twitter and Instagram reaction across the world.  On the left side, when posts are made to social media by fans, they instantly appear on the left side.  On the right side, a website with official information and a cart to buy packages with the album.  React made this smooth and performant.  Currently, it is on a smaller server and listens to hashtags of #html5 to show the real-time aspect. </p>"
+   },
+
+   // Angular
+   {
+      "l1":"https://play.google.com/store/apps/details?id=com.biolithic.one_shot_gurl_tube",
+      "l2":"http://chicagodnb.org/cm.apk",
+      "i1":"images/gradingapp1.png",
+      "i2":"images/worshipbook1.png",
+      "i3":"images/partsline2.png",
+      "i4":"images/cm1.png",
+      "t1":"<p>I am not currently pursuing Angular focused positions at this time, but I have spent my time consuming API's and creating form based CRUD apps.  Some of them include a private school grading app, an offline-first, swipe-based band song manager, an internal inventory app, a local music festival voting app.  Because it is easy to start with Yeoman, separate development into roughly MVC files and build and deploy to Heroku or AWS, Angular could be a safe choice for CRUD based apps.  I am not sure whether it is needed anymore with the new Javascript specs and things like Riot.</p>",
+      "t2":"<hr /><p>Ionic is a mobile app/Cordova based UI library and toolkit for Angular apps.  If I am doing Angular for mobile consumption and I get to choose, I am choosing Ionic as a version of Angular to use. I have published a public Ionic2 app and an Ionic1 app to Google Play.  The Ionic1 app was a personal caffeine tracker/diet informer which was originally built in JQuery Mobile, then Sencha Touch, then plain Javascript (no frameworks in one single HTML5 file), then ported to Ionic1/NodeJS/Parse.  Each version I used less buttons and visual clutter and more touch-based actions and status cartoons for navigation/menus/viewing profile or stats.  In the beginning (Android 2.2), I had buttons, status listings, colors, stats all over the mobile app and it was terrible usability.  By the current version, you barely need to look at the phone screen to understand where you are in your day, and you don't need to concentrate to just flip through the app and complete your dietary tasks in a couple of seconds.  </p><p>For the Ionic2 app, it was basically an offline playlist reader/viewer.  I wrote a Youtube XML API parser for certain highlighted playlists, saved them as individual nodes into Backdrop CMS, used that as an headless API to feed to the mobile app. The brand manager can then use the easy backend of the CMS to choose which playlists to feed to the app.</p>"
+   },
+
+   // JQuery
+   {
+      "l1":"http://chicagodnb.org/freezine",
+      "l2":"http://quickthank.net",
+      "i1":"images/freezine1.png",
+      "i2":"images/freezine2.png",
+      "i3":"images/qt1.png",
+      "i4":"images/qt2.png",
+      "t1":"<p>Problem:<br> You have a news topic, such as refugees or human trafficking, which from national news broadcasts you know that there is a problem.  So how to know more of what you can do about it?  Search Google for 25 editorials?  Browse social media for hours?</p><p>Solution:<br> Make a script that once a day scrapes the teasers of the latest three posts to social media from 30 hand-picked non-profit organzations involved with this topic, and serve it up as a one-at-a-time, easy-to-scan lazy loaded collated newspaper about who's doing what about this news topic.  It loads 3 posts at a time as you scroll down with your fingers/mouse, and was built mobile first as all the hashtags/mentions/links are tappable to searches on those.  Material UI and JQuery Masonry made this familiar to use to those who use products like Pinterest and Android.</p>",
+      "t2":"<hr /><p>In a B2B webapp named QuickThank that used the LinkedIn API, I made some UI/UX improvements that greatly assisted users/customers in getting started with the single page application. To improve loading and browsing time, I used resizable CSS shapes, SVG vectors and CSS animations with only a few Retina/HD graphics for a slick look on any device.  The purpose of the app was to browse contacts by name or company and send multiple gifts out.  To reduce loading time in searching the Linkedin API, we downloaded the user's Linkedin contacts and companies to localstorage upon page load.  Then, upon each text character press (on mobile), we did an AJAX instant search among the local storage.  For example, tapping L-I-Z instantly brought up the faces our contacts of Liz Smith, Elizabeth Jones, Jenny McLiz to tap each and send a message gift link to them.  Tapping A-C-M brought up the faces of all our co-workers at ACME buisness Co. to tap each and send a message gift link to them.  When the user left the webapp, we deleted all the localstorage information from our site first.  I utilized email verification scripts on blur, zipcode address auto-completing, intuitive error messages, and mobile friendly goodness to make the gift receiving page a pleasure to use.  I did not use a large Javascript framework because mobile page speed and usability were the keys on this project. This startup is no longer active, however.</p>"
+   },
+
+//
+
+    // Hybrid
+   {
+      "l1":"#",
+      "l2":"https://www.prepecn.com/",
+      "i1":"images/asthma1.png",
+      "i2":"images/asthma2.jpg",
+      "i3":"images/prep1.png",
+      "i4":"images/prep2.png",
+      "t1":"<p>Problem:<br>It would be nice for a doctor to have the ability to set reocurring alarms/notifications on the patient's phone of when and how much to take of their medicine.  Also, for mobile technology to help the patient understand their current asthma state to warn of possible attacks.</p><hr /><p>Solution:<br>create a mobile app (cross-platform/HTML5/Cordova) that will contain this functionality and give it to doctors to use.</p>",
+      "t2":"<hr /><p>PrepECN is a platform for French medical students to practice quizzes for their degree.  There is an online subscription, which I did not build.  However, I was brought in to finish the mobile app built in HTML5, MVC Javascript and PhoneGap.  A majority of my work was to implement an offline search engine and test taking.</p><hr /><p>The quizzes are made of many categories and over 1000 questions from a Symphony API.  A majority of my work was to silently save each category, test and question in local storage in the browser as the user browsed and took each quiz when they had a connection on their phone.  Then, if the user lost a network connection, the app worked the exact same for users' existing data.  API objects were mocked equally locally, so that category searches, API requests, and quiz grades were the exact same whether they were to the network API JSON or the local app JSON.  The iOS and Android apps reduced server load and provided useful functionality this way.</p>"
+   },
+
+   // UI/UX
+   {
+      "l1":"https://www.behance.net/gallery/26489347/1-day-website-re-do",
+      "l2":"https://www.behance.net/gallery/19994057/startup-design-1",
+      "i1":"images/uiux1.png",
+      "i2":"images/uiux2.png",
+      "i3":"images/uiux3.png",
+      "i4":"images/uiux4.png",
+      "t1":"<p>I use the internet -- on my phone.  It surprises me monthly to find big websites who have never tested or don't care about how unusable their websites are on phones.  On off-days, I enjoy spending a day remaking these websites (by using their own APIs to generate the site content, not writing my own) by implementing a mobile-first approach instead.  This involves smart usage of icons, tappable areas, dark colours for previously visited sections, rethinking form elements and colours to categorize what is important, and decluttering existing desktop patterns.  Practice makes perfect!</p>",
+      "t2":"<hr /><p>Here are two existing job websites I remade in a day showing thought for phone users, and my thought process for the redesign: <a href='https://www.behance.net/gallery/26489347/1-day-website-re-do'>ONE</a>  <a href='https://www.behance.net/gallery/19994057/startup-design-1'>TWO</a></p>"
+   },
+
+   // Creative Design
+   {
+      "l1":"#",
+      "l2":"#",
+      "i1":"images/event1.jpg",
+      "i2":"images/dnb1.png",
+      "i3":"images/andy1.png",
+      "i4":"images/andy2.png",
+      "t1":"Not every website needs to look like the traditional Bootstrap-based startup design.  Not every website needs to be radical either!  Here are some off-the-beaten path designs I have made and implemented in the past: Halloween ancient document, liquid funk as liquid purple, flying in the sky portfolio, and smokey semi-transparent fixed background.  If your business goals are lead-generation or engagement, a more traditional design may be in order.  These types of designs are more for the memorable event splash pages or individual personalities.",
+      "t2":""
+   },
+
+   // Quiz
+   {
+      "l1":"http://chicagodnb.org/quiz/",
+      "l2":"http://chicagodnb.org/quiz/",
+      "i1":"images/spacer.gif",
+      "i2":"images/spacer.gif",
+      "i3":"images/spacer.gif",
+      "i4":"images/spacer.gif",
+      "t1":"<a href='http://chicagodnb.org/quiz/' title='view one day quiz'>view one day quiz from Paul Irish</a>",
+      "t2":""
+   }
+];
+
+      window.addEventListener("load", function(event) {
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(function(err) {
+            console.log(err);
+        });
+    }
+});
+
+</script>
+</body>
+</html>
