@@ -1,5 +1,5 @@
 importScripts('cachepolyfill.js');
-var CACHE_NAME = 'biolithic-cache-v1-3';
+var CACHE_NAME = 'biolithic-cache-v1-4';
 var urlsToCache = [
   '/',
   'index.html',
