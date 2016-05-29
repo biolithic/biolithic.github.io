@@ -1,5 +1,5 @@
 importScripts('cachepolyfill.js');
-var CACHE_NAME = 'biolithic-cache-v1-2';
+var CACHE_NAME = 'biolithic-cache-v1-3';
 var urlsToCache = [
   '/',
   'index.html',
@@ -93,7 +93,11 @@ var urlsToCache = [
   '/images/w2s1.png',
   '/images/w2s2.png',
   '/images/worshipbook1.png',
-  '/images/zurb6.png'
+  '/images/zurb6.png',
+  'osnteam.html',
+  'team1.jpg',
+  'team2.jpg',
+  'logo.png'
 ];
 
 self.addEventListener('install', function(event) {
