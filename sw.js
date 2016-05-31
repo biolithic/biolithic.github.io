@@ -1,5 +1,5 @@
 importScripts('cachepolyfill.js');
-var CACHE_NAME = 'biolithic-cache-v1-4';
+var CACHE_NAME = 'biolithic-cache-v1-5';
 var urlsToCache = [
   '/',
   'index.html',
@@ -94,6 +94,9 @@ var urlsToCache = [
   '/images/w2s2.png',
   '/images/worshipbook1.png',
   '/images/zurb6.png',
+  '/images/info1.png',
+  '/images/info2.png',
+  '/images/analytics1.png',
   'osnteam.html',
   'team1.jpg',
   'team2.jpg',
