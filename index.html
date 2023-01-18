@@ -755,24 +755,24 @@ svg {
 </div>
 
 <script>
-
+window.slideIndex = 1;
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showSlides(window.slideIndex += n);
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  showSlides(window.slideIndex = n);
 }
 
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) {window.slideIndex = 1}
+  if (n < 1) {window.slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slides[slideIndex-1].style.display = "block";
+  slides[window.slideIndex-1].style.display = "block";
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -788,9 +788,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var g = document.getElementById("goBoomGallery");
     g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'><h2 class='text'>" + videos[i].title + "</h2><img src='https://img.youtube.com/vi/" + videos[i].url + "/sddefault.jpg' /></div>");
   }
-
-  let slideIndex = 1;
-  showSlides(slideIndex);
+ 
+  showSlides(window.slideIndex);
 })();
 
 });
