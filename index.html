@@ -1349,23 +1349,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
   for (let i = 0; i < videosLength; i++) {
     var ii = i + 1;
-    // videos[i]
     var div = document.createElement("div");
     var divParent = document.getElementById("goBoomGallery");
     div.id = "item-" + ii;
     div.className = "control-operator";
     divParent.appendChild(div);
-
-    var g = document.getElementById("goBoomGallery");
-    g.insertAdjacentHTML("beforeend", "<figure class='item'><div class='superfluous'><h2>" + videos[i].title + "</h2><img src='https://img.youtube.com/vi/" + videos[i].url + "/sddefault.jpg' /></div></figure>");
   }
+
+for (let i = 0; i < videosLength; i++) {
+  var ii = i + 1;
+  var g = document.getElementById("goBoomGallery");
+  g.insertAdjacentHTML("beforeend", "<figure class='item'><div class='superfluous'><h2>" + videos[i].title + "</h2><img src='https://img.youtube.com/vi/" + videos[i].url + "/sddefault.jpg' /></div></figure>");
+}
 
   var g = document.getElementById("goBoomGallery");
   g.classList.add('js-autoheight');
-  g.classList.add('items-' + videosLength);
   g.classList.add('gallery');
   g.classList.add('autoplay');
-
+  g.classList.add('items-' + videosLength);
 })();
 
    
