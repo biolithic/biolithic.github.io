@@ -1362,6 +1362,22 @@ svg {
         </figure>
 
 </section>
-  
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+// https://biolithic.github.io/goboom.json
+let url = 'https://biolithic.github.io/goboom.json';
+let response = await fetch(url);
+let commits = await response.json();
+console.log(commits);
+
+   
+});
+
+
+</script>  
 </body>
 </html>
