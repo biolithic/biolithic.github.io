@@ -786,7 +786,7 @@ document.addEventListener("DOMContentLoaded", function() {
   for (let i = 0; i < videosLength; i++) {
     var ii = i + 1;
     var g = document.getElementById("goBoomGallery");
-    g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'><h2 class='text'>" + videos[i].title + "</h2><img src='https://img.youtube.com/vi/" + videos[i].url + "/sddefault.jpg' /></div>");
+    g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'><h2 class='text'>" + videos[i].quote + "</h2><img src='https://img.youtube.com/vi/" + videos[i].url + "/sddefault.jpg' /></div>");
   }
  
   showSlides(window.slideIndex);
