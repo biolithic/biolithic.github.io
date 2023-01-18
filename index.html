@@ -161,6 +161,8 @@ sub {
  */
 img {
   border: 0;
+  max-height: 480px;
+  border-radius: 2rem;
 }
 /**
  * Correct overflow not hidden in IE 9/10/11.
@@ -1332,36 +1334,7 @@ svg {
       </defs>
     </svg>
 
-<section class="js-autoheight gallery autoplay items-3" style="min-height: 396px;">
-        <div id="item-1" class="control-operator"></div>
-        <div id="item-2" class="control-operator"></div>
-        <div id="item-3" class="control-operator animations"></div>
-
-        <figure class="item">
-          <div class="superfluous">
-            <header>
-              <h2>One</h2>
-            </header>
-          </div>
-        </figure>
-
-        <figure class="item">
-          <div class="superfluous">
-            <header>
-              <h2>Two</h2>
-            </header>
-          </div>
-        </figure>
-
-        <figure class="item">
-          <div class="superfluous">
-            <header>
-              <h2>Three</h2>
-            </header>
-          </div>
-        </figure>
-
-</section>
+<section class="" style="min-height: 396px;" id='goBoomGallery'></section>
 
 
 <script>
@@ -1369,11 +1342,30 @@ svg {
 document.addEventListener("DOMContentLoaded", function() {
 
 (async () => {
-  // https://biolithic.github.io/goboom.json
   let url = 'https://biolithic.github.io/goboom.json';
   let response = await fetch(url);
-  let commits = await response.json();
-  console.log(commits);
+  let videos = await response.json();
+  var videosLength = videos.length;
+
+  for (let i = 0; i < videosLength; i++) {
+    var ii = i + 1;
+    // videos[i]
+    var div = document.createElement("div");
+    var divParent = document.getElementById("goBoomGallery");
+    div.id = "item-" + ii;
+    div.className = "control-operator";
+    divParent.appendChild(div);
+
+    var g = document.getElementById("goBoomGallery");
+    g.insertAdjacentHTML("beforeend", "<figure class='item'><div class='superfluous'><h2>" + videos[i].title + "</h2><img src='https://img.youtube.com/vi/" + videos[i].url + "/sddefault.jpg' /></div></figure>");
+  }
+
+  var g = document.getElementById("goBoomGallery");
+  g.classList.add('js-autoheight');
+  g.classList.add('items-' + videosLength);
+  g.classList.add('gallery');
+  g.classList.add('autoplay');
+
 })();
 
    
