@@ -789,7 +789,8 @@ document.addEventListener("DOMContentLoaded", function() {
     g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'><h2 class='text'>" + videos[i].quote + "</h2><img src='https://img.youtube.com/vi/" + videos[i].url + "/sddefault.jpg' /></div>");
   }
  
-  setInterval(function () {  showSlides(window.slideIndex);  }, 5000);
+  showSlides(window.slideIndex);
+  setInterval(function () {  plusSlides(1);  }, 5000);
 })();
 
 });
