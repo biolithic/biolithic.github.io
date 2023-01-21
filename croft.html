@@ -831,6 +831,7 @@ if(!config.callback){return output;}else{config.callback('',output);}}};$.csvEnt
 </div>
 
 <script>
+window.someQuotes = [];
 
 // window.slideIndex = 1;
 // function plusSlides(n) {
@@ -922,6 +923,13 @@ function offlinedb_get_xyz(urlObj) {
                         console.log(index2);
                         console.log(colData);
                         console.log("-----");
+                        if (colData) {
+                          let result = colData.includes("croft");
+                          if (result) {
+                            window.someQuotes.push(colData);
+                          }
+                        }
+                        
                         // if ( isNaN(colData) ) {
                         //  var bLength = blockedWordsToCheck.length;
                         //  for (var i = 0, l = bLength; i < l; ++i) {
@@ -935,6 +943,7 @@ function offlinedb_get_xyz(urlObj) {
                 return true;
               }
             console.log("done");
+            console.log(window.someQuotes);
         }
       });
     }
