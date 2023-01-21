@@ -882,14 +882,15 @@ function offlinedb_get_comments_from_network() {
     return json;
   })();
   
-  var jLength = json.length;
+  jLength = json.length;
   console.log(jLength);
-  var i = 0;
+  i = 0;
   var p = $.when();
   json.forEach(function(url, key) {
+      console.log(key + ' key');
       p = p.then(function() { 
         if (url) {
-          i = i++;
+          i = i + 1;
           console.log(i);
           if (i == jLength) {
             console.log("we are finally done");
