@@ -882,15 +882,23 @@ function offlinedb_get_comments_from_network() {
     return json;
   })();
   
+  var jLength = json.length;
+  console.log(jLength);
+  var i = 0;
   var p = $.when();
   json.forEach(function(url, key) {
       p = p.then(function() { 
         if (url) {
-          return offlinedb_get_xyz(url);
+          i = i++;
+          console.log(i);
+          if (i == jLength) {
+            console.log("we are finally done");
+          } else {
+            return offlinedb_get_xyz(url);  
+          }
+
         }
       });
-  }).then(function() { 
-    console.log("am I done?");
   });
 
 }
@@ -940,7 +948,7 @@ function offlinedb_get_xyz(urlObj) {
                       });
                     }
                   });
-                  console.log("done!");
+                  console.log("finish");
                   // console.log(window.someQuotes);
                 return true;
               }
