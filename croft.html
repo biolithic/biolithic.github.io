@@ -816,6 +816,42 @@ if(!config.callback){return output;}else{config.callback('',output);}}};$.csvEnt
 
 
 </script>
+<script 
+type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/dynamic-marquee@2"
+></script>
+
+<style>
+  #marquee {
+    position: fixed;
+    overflow: hidden;
+    margin: 0;
+    padding: 7px 0;
+    font-size: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #c80000;
+    color: #ffffff;
+    font-family: Verdana, Geneva, sans-serif;
+  }
+</style>
+
+<script type="text/javascript">
+  var $marquee = document.getElementById('marquee');
+  var marquee = (window.m = new dynamicMarquee.Marquee($marquee, {
+    rate: -100,
+  }));
+  window.l = dynamicMarquee.loop(
+    marquee,
+    window.someQuotes,
+    function () {
+      var $separator = document.createElement('div');
+      $separator.innerHTML = '&nbsp•&nbsp';
+      return $separator;
+    }
+  );
+</script>
 
 </head>
 <body class="body">
@@ -829,6 +865,8 @@ if(!config.callback){return output;}else{config.callback('',output);}}};$.csvEnt
   <p><small>developed by biolithic in 1 day with some assistance by karatecowboy.</small></p>
   <p><small>All content is property of and copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023.</small></p>
 </div>
+<div id="marquee"></div>
+
 
 <script>
 window.someQuotes = [];
@@ -892,9 +930,12 @@ function offlinedb_get_comments_from_network() {
         if (url) {
           // i = i + 1;
           // console.log(i);
-          if (key == jLength) {
+          if ( (key+1) == jLength) {
             console.log("we are finally done");
             console.log(window.someQuotes);
+
+
+
           } else {
             return offlinedb_get_xyz(url);  
           }
