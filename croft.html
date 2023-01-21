@@ -919,9 +919,9 @@ function offlinedb_get_comments_from_network() {
             var quotesLength = window.someQuotes.length;
             for (let i = 0; i < quotesLength; i++) {
               var div = document.createElement('div');
-              var txt = window.someQuotes[i][0].toUpperCase() + window.someQuotes[i].substring(1) + " - ";
+              var txt = window.someQuotes[i][0].toUpperCase() + window.someQuotes[i].substring(1) + " -- ";
               div.textContent = txt;
-              marquee.appendItem($item);
+              marquee.appendItem(div);
             }
             marquee = new Marquee(document.getElementById('marquee'));
 
