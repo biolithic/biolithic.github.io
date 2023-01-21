@@ -826,7 +826,7 @@ if(!config.callback){return output;}else{config.callback('',output);}}};$.csvEnt
   <p>Let's find out, shall we!</p>
   <p>Real comments sourced directly from each Youtube video.</p>
   <p>All comments on all videos have been backed up and saved for posterity sake.</p>
-  <p><small>developed by biolithic in 1 day &amp; 2 nights with some assistance by karatecowboy.</small></p>
+  <p><small>developed by biolithic in 1 day with some assistance by karatecowboy.</small></p>
   <p><small>All content is property of and copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023.</small></p>
 </div>
 
@@ -920,9 +920,6 @@ function offlinedb_get_xyz(urlObj) {
                     if (index1 == 0) {
                     } else {
                       $.each(row, function( index2, colData ) {
-                        console.log(index2);
-                        console.log(colData);
-                        console.log("-----");
                         if (colData) {
                           let result = colData.includes("croft");
                           if (result) {
@@ -942,7 +939,7 @@ function offlinedb_get_xyz(urlObj) {
                   });
                 return true;
               }
-            console.log("done");
+            console.log(" - done - ");
             console.log(window.someQuotes);
         }
       });
