@@ -869,8 +869,7 @@ function offlinedb_get_comments_from_network() {
   // worker1 = new Worker("PrimeWorker.js");
   var json = (function () {
     var json = null;
-    if (window.offlinedbChannel) {
-      $.ajax({
+    $.ajax({
           'async': false,
           'global': false,
           'url': "https://biolithic.github.io/goboom.json",
@@ -879,7 +878,6 @@ function offlinedb_get_comments_from_network() {
             json = data;
           }
       });
-    }
     return json;
   })();
   
