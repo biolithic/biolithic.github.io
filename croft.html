@@ -913,8 +913,7 @@ function offlinedb_get_comments_from_network() {
           // i = i + 1;
           // console.log(i);
           if ( (key+1) == jLength) {
-            console.log("we are finally done");
-            console.log(window.someQuotes);
+            const Marquee = dynamicMarquee.Marquee;
             var quotesLength = window.someQuotes.length;
             for (let i = 0; i < quotesLength; i++) {
               var txt = window.someQuotes[i][0].toUpperCase() + window.someQuotes[i].substring(1) + " -- ";
