@@ -684,10 +684,14 @@ function offlinedb_get_xyz(urlObj) {
                     } else {
                       $.each(row, function( index2, colData ) {
                         if (colData) {
-                          let result = colData.includes("croft");
-                          if (result) {
-                            window.someQuotes.push(colData);
+                          
+                          var first200 = colData.slice(0, 202);
+                          let result1 = first200.includes("croft");
+                          let result2 = first200.includes("tomb raider");
+                          if (result1 || result2) {
+                            window.someQuotes.push(first200 + "...");
                           }
+
                         }
                         
                         // if ( isNaN(colData) ) {
