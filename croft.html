@@ -388,10 +388,11 @@ a {
   font-family: Inter, sans-serif;
   height: 100vh;
   width: 100vw;
-  background-image: url("crofty_goals.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: linear-gradient(180deg, rgba(183,165,145,1) 0%, rgba(183,165,145,1) 0%, rgba(85,84,92,1) 100%);
+}
+
+.container {
+
 }
 
 section.gallery {
@@ -838,6 +839,31 @@ src="https://cdn.jsdelivr.net/npm/dynamic-marquee@2"
     color: #ffffff;
     font-family: Verdana, Geneva, sans-serif;
   }
+
+div {
+  perspective: 500px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.square {
+  width: 300px;
+  height: 300px;
+  background-image: url("crofty_goals.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(45deg);
+  animation: rotateAnimation 1s linear infinite;
+}
+
+@keyframes rotateAnimation {
+  from {transform: rotateY(45deg);}
+  to {transform: rotateY(225deg);}
+}
+
 </style>
 
 </head>
@@ -851,6 +877,11 @@ src="https://cdn.jsdelivr.net/npm/dynamic-marquee@2"
   <p><small>developed by biolithic in 1 day with some assistance by karatecowboy.</small></p>
   <p><small>All content is property of and copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023.</small></p>
 </div>
+
+<div>
+<div class="square"></div>
+</div>
+
 <div id="marquee"></div>
 
 <script>
