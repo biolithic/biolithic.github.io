@@ -707,10 +707,10 @@ function offlinedb_get_xyz(urlObj) {
                         if (colData) {
                           
                           var first152 = colData.slice(0, 152);
-                          let result1 = first200.includes("croft");
-                          let result2 = first200.includes("tomb raider");
+                          let result1 = first152.includes("croft");
+                          let result2 = first152.includes("tomb raider");
                           if (result1 || result2) {
-                            window.someQuotes.push(first200 + "...");
+                            window.someQuotes.push(first152 + "...");
                           }
 
                         }
