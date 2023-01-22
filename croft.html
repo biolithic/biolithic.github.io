@@ -840,30 +840,32 @@ src="https://cdn.jsdelivr.net/npm/dynamic-marquee@2"
     font-family: Verdana, Geneva, sans-serif;
   }
 
-div {
-  perspective: 500px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+@keyframes spin {
+ from{
+ transform: rotateY(0deg);
+ moz-transform: rotateY(0deg); //Firefox
+ ms-transform: rotateY(0deg); //Microsoft Browsers
+ }
+ to{
+ transform: rotateY(360deg);
+ moz-transform: rotateY(360deg); //Firefox
+ ms-transform: rotateY(360deg); //Microsoft Browsers
+ }
 }
-
-.square {
-  width: 300px;
-  height: 300px;
-  background-image: url("crofty_goals.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transform: rotateY(45deg);
-  animation: rotateAnimation 1s linear infinite;
+@-webkit-keyframes spin{
+ from{-webkit-transform: rotateY(0deg);}
+ to{-webkit-transform: rotateY(360deg);}
 }
-
-@keyframes rotateAnimation {
-  from {transform: rotateY(45deg);}
-  to {transform: rotateY(225deg);}
+.imageSpin{
+ animation-name: spin;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite;
+ animation-duration: 5s;
+ -webkit-animation-name: spin;
+ -webkit-animation-timing-function: linear;
+ -webkit-animation-iteration-count: infinite;
+ -webkit-animation-duration: 5s;
 }
-
 </style>
 
 </head>
@@ -878,10 +880,7 @@ div {
   <p><small>All content is property of and copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023.</small></p>
 </div>
 
-<div>
-<div class="square"></div>
-</div>
-
+<img src="crofty_goals.jpg" class="imageSpin">
 <div id="marquee"></div>
 
 <script>
