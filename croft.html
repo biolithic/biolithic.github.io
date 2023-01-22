@@ -551,14 +551,35 @@ src="https://cdn.jsdelivr.net/npm/dynamic-marquee@2"
  -webkit-animation-timing-function: linear;
  -webkit-animation-iteration-count: infinite;
  -webkit-animation-duration: 10s;
+ margin: 0 auto;
+ display: block;
+}
+
+@font-face {
+  font-family: "Tomb_Raider";
+  src: url('Tomb_Raider.ttf') format('truetype');
+}
+
+#footnotes {
+  font-family: "Fira Sans", "PT Sans", Calibri, Tahoma, sans-serif;
+  color: #f9de69;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 </style>
 
 </head>
 <body class="body">
 
+<div ></div>
 <img src="crofty_goals.jpg" class="imageSpin">
 <div id="marquee"></div>
+
+<div id="footnotes">
+  <p>Real comments sourced directly from each Youtube video.</p>
+  <p><small>All content is property of and copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023.</small></p>
+</div>
 
 <script>
 window.someQuotes = [];
@@ -685,7 +706,7 @@ function offlinedb_get_xyz(urlObj) {
                       $.each(row, function( index2, colData ) {
                         if (colData) {
                           
-                          var first200 = colData.slice(0, 202);
+                          var first152 = colData.slice(0, 152);
                           let result1 = first200.includes("croft");
                           let result2 = first200.includes("tomb raider");
                           if (result1 || result2) {
