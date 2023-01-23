@@ -94,9 +94,7 @@ template {
 /**
  * Remove the gray background color from active links in IE 10.
  */
-a {
-  background-color: transparent;
-}
+
 /**
  * Improve readability of focused elements when they are also in an
  * active/hover state.
@@ -377,7 +375,6 @@ th {
 
 
 a {
-  color: #848d96;
   text-decoration: none;
 }
 
@@ -578,48 +575,17 @@ src="https://cdn.jsdelivr.net/npm/dynamic-marquee@2"
 <div id="marquee"></div>
 
 <div id="footnotes">
-  <p>Real comments sourced directly from each Youtube video.</p>
-  <p><small>All content is property of and copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023.</small></p>
+  <p>Crofty Goals</p>
+  <p>Real comments sourced directly from her <a href='https://www.youtube.com/@MelonieMacGoBoom' target='_blank'>Youtube videos</a>.</p>
+  <p><small>All content property of &amp; copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023.</small></p>
 </div>
 
 <script>
 window.someQuotes = [];
 
-// window.slideIndex = 1;
-// function plusSlides(n) {
-//   showSlides(window.slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//   showSlides(window.slideIndex = n);
-// }
-
-// function showSlides(n) {
-//   let i;
-//   let slides = document.getElementsByClassName("mySlides");
-//   if (n > slides.length) {window.slideIndex = 1}
-//   if (n < 1) {window.slideIndex = slides.length}
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   slides[window.slideIndex-1].style.display = "block";
-// }
 function offlinedb_get_comments_from_network() {
   console.log("Start: Loading comments, please wait...");
-  // blockedWordsToCheck = "";
-  // var x = document.querySelector('input[name="blockedWords"]:checked').value;
-  // console.log("are we filtering bad words? " + x);
-  // if (x == "no") { } 
-  // if (x == "yes") {
-  //   blockedWordsToCheck = badWords;
-  //   var customBlockedWords = window.localStorage.getItem('customBlockedWords');
-  //   var customBlockedWordsArr = customBlockedWords.split(",");
-  //   blockedWordsToCheck = blockedWordsToCheck.concat(customBlockedWordsArr);
-  //   console.log("we filtering bad words: " + x);
-  //   console.log(blockedWordsToCheck); // array of words
-  // }
-
-  // worker1 = new Worker("PrimeWorker.js");
+  
   var json = (function () {
     var json = null;
     $.ajax({
@@ -637,7 +603,6 @@ function offlinedb_get_comments_from_network() {
   jLength = json.length;
   console.log(jLength);
   Marquee = dynamicMarquee.Marquee;
-  // i = 0;
   var p = $.when();
   json.forEach(function(url, key) {
       console.log(key + ' key');
@@ -660,13 +625,6 @@ function offlinedb_get_comments_from_network() {
               }
             })
             dynamicMarquee.loop(marqueex, builders);
-
-            // var quotesLength = window.someQuotes.length;
-            // for (let i = 0; i < quotesLength; i++) {
-            //   var txt = window.someQuotes[i][0].toUpperCase() + window.someQuotes[i].substring(1) + " -- ";
-            //   var html = '<div>' + txt + '</div>';
-            //  $('#marquee').append(html);
-
           } else {
             return offlinedb_get_xyz(url);  
           }
@@ -679,8 +637,6 @@ function offlinedb_get_comments_from_network() {
 
 
 function offlinedb_get_xyz(urlObj) {
-  // worker1.onmessage = receivedWorkerMessage;
-  // worker1.onerror = workerError;
   if (urlObj) {
     if (urlObj.url) {
       vid = urlObj.url;
@@ -716,18 +672,10 @@ function offlinedb_get_xyz(urlObj) {
 
                         }
                         
-                        // if ( isNaN(colData) ) {
-                        //  var bLength = blockedWordsToCheck.length;
-                        //  for (var i = 0, l = bLength; i < l; ++i) {
-                        //    colData = colData.replaceAll(blockedWordsToCheck[i], '****');
-                        //    data[index1][index2] = colData;
-                        //  }
-                        // }
                       });
                     }
                   });
                   console.log("finished");
-                  // console.log(window.someQuotes);
                 return true;
               }
         }
