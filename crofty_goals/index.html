@@ -259,15 +259,77 @@ src="https://cdn.jsdelivr.net/npm/dynamic-marquee@2"
 #footnotes a {
   color: #f9de69;
 }
-</style>
 
+
+#cube-container {
+  width: max-content;
+  height: max-content;
+  margin: 80px auto;
+  perspective: 400px;     
+}
+
+#cube-container:before {
+  content: '';
+  position: absolute; 
+  top: 90px;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+ 
+  animation: rotateShadow 16s infinite; 
+}
+
+.cube { 
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;     
+  transition: all 0.5s ease-in-out;   
+  animation: rotate 32s infinite; 
+}
+
+.cube img {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #000;
+  box-shadow: 1px 2px 2px 1px #222;
+}
+
+.cube img:nth-child(1) {
+  transform: rotateY(0deg) translateZ(150px);
+}
+.cube img:nth-child(2) {
+  transform: rotateY(90deg) translateZ(150px);
+}
+.cube img:nth-child(3) {
+  transform: rotateY(-90deg) translateZ(150px);
+}
+.cube img:nth-child(4) {
+  transform: rotateY(180deg) translateZ(150px);
+}
+
+@keyframes rotate {
+  0% { transform: rotateY(0deg); }    
+  25% { transform: rotateY(90deg); }    
+  50% { transform: rotateY(180deg);}  
+  75% {  transform: rotateY(270deg); }  
+  100% { transform: rotateY(360deg); }
+}
+</style>
 </head>
 <body class="body">
 
 <div ></div>
-<img src="crofty_goals.jpg" class="imageSpin">
+<div id="cube-container"> 
+  <div class="cube">
+    <img src="1.jpg" />
+    <img src="2.jpg" />
+    <img src="3.jpg" />
+    <img src="4.jpg" />
+  </div>
+</div>
 <div id="marquee"></div>
-
 <div id="footnotes">
   <p>Crofty Goals</p>
   <p>Real comments sourced directly from her <a href='https://www.youtube.com/@MelonieMacGoBoom' target='_blank'>Youtube videos</a>.</p>
@@ -277,9 +339,7 @@ src="https://cdn.jsdelivr.net/npm/dynamic-marquee@2"
 <script>
 window.someQuotes = [];
 
-function offlinedb_get_comments_from_network() {
-  console.log("Start: Loading comments, please wait...");
-  
+function get_comments_from_network() {
   var json = (function () {
     var json = null;
     $.ajax({
@@ -320,7 +380,7 @@ function offlinedb_get_comments_from_network() {
             })
             dynamicMarquee.loop(marqueex, builders);
           } else {
-            return offlinedb_get_xyz(url);  
+            return get_xyz(url);  
           }
 
         }
@@ -330,7 +390,7 @@ function offlinedb_get_comments_from_network() {
 }
 
 
-function offlinedb_get_xyz(urlObj) {
+function get_xyz(urlObj) {
   if (urlObj) {
     if (urlObj.url) {
       vid = urlObj.url;
@@ -381,7 +441,7 @@ function offlinedb_get_xyz(urlObj) {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  offlinedb_get_comments_from_network();
+  get_comments_from_network();
 });
 </script>  
 </body>
