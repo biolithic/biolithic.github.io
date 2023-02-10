@@ -363,8 +363,7 @@ function get_comments_from_network() {
       p = p.then(function() { 
         if (url) {
           if ( (key+1) == jLength) {
-            
-            console.log(window.someQuotes);
+            window.someQuotes = shuffleArray(window.someQuotes);
             marqueex = new Marquee(document.getElementById('marquee'), {
               rate: -150,
               startOnScreen: true,
@@ -429,8 +428,7 @@ function get_xyz(urlObj) {
                       });
                     }
                   });
-                console.log("finished");
-                window.someQuotes = shuffleArray(window.someQuotes);
+                console.log("finished with one video comments");
                 return true;
               }
         }
