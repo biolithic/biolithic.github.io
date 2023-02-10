@@ -363,16 +363,13 @@ function get_comments_from_network() {
       p = p.then(function() { 
         if (url) {
           if ( (key+1) == jLength) {
-            var anArray = window.someQuotes;
-            console.log(anArray);
             var shuffledArray = shuffleArray(window.someQuotes);
-            console.log(shuffledArray);
             marqueex = new Marquee(document.getElementById('marquee'), {
               rate: -150,
               startOnScreen: true,
             });
 
-            const builders = window.someQuotes.map(item => {
+            const builders = shuffledArray.map(item => {
               return () => {
                 var txt = item[0].toUpperCase() + item.substring(1) + " -- ";
                 const el = document.createElement('div')
@@ -441,15 +438,14 @@ function get_xyz(urlObj) {
 
 
 function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    return array;
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+  return array;
 }
-
 
 document.addEventListener("DOMContentLoaded", function() {
   get_comments_from_network();
