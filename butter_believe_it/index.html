@@ -84,7 +84,7 @@ section.gallery {
 }
 
 .cont{
-  width: 100%;
+  width: 101%;
   height: 100vh;
   position:relative;
   overflow:hidden;
@@ -398,13 +398,15 @@ svg {
   position: absolute;
   top: 0px;
   background: linear-gradient(10deg, rgba(255,255,170,1) 0%, rgba(221,221,221,1) 35%, rgba(255,255,119,1) 100%);
-  opacity: .5
+  opacity: .5;
+  min-height: 396px;
+  width: -webkit-fill-available;
 }
 
 #about {
   position: absolute;
-  top: 0px;
-  left: 650px;
+  bottom: 0px;
+  left: 5px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -468,16 +470,17 @@ svg {
       </defs>
     </svg>
 
-<div class="slideshow-container" id="goBoomGallery" style="min-height: 396px;">
+<div class="slideshow-container" id="goBoomGallery">
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
 <div id='about'>
-  <h1><a href="https://biolithic.github.io/" title="See who is behind this and how you can join in">Butter Believe It!</a></h1>
-  <h3>What are the average people saying about content creator Melonie Mac?</h3>
-  <p>Real comments taken directly &amp; from each Youtube video.</p>
-  <p><small>All content is property of &amp; copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023.</small></p>
+  <small>
+  <strong>MelonieGold brand butter - </strong>
+  <span>All content is property of &amp; copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023. - </span>
+  <span><a href="https://biolithic.github.io/" title="See who is behind this and how you can join in">Credits</a></span>
+  </small>
 </div>
 
 <script>
