@@ -358,15 +358,14 @@ function get_comments_from_network() {
   })();
   
   jLength = json.length;
-  console.log(jLength);
   Marquee = dynamicMarquee.Marquee;
   var p = $.when();
   json.forEach(function(url, key) {
-      console.log(key + 'st video');
       p = p.then(function() { 
         if (url) {
           if ( (key+1) == jLength) {
             var shuffledArray = shuffleArray(window.someQuotes);
+            console.log(shuffledArray);
             marqueex = new Marquee(document.getElementById('marquee'), {
               rate: -150,
               startOnScreen: true,
@@ -420,9 +419,10 @@ function get_xyz(urlObj) {
                       $.each(row, function( index2, colData ) {
                         if (colData) {
                           var first152 = colData.slice(0, 152);
-                          let result1 = first152.includes("croft");
-                          let result2 = first152.includes("tomb raider");
-                          if (result1 || result2) {
+                          let result1 = first152.includes("lara");
+                          let result2 = first152.includes("croft");
+                          let result3 = first152.includes("tomb raider");
+                          if (result1 || result2 || result3) {
                             window.someQuotes.push(first152 + "...");
                           }
                         }
