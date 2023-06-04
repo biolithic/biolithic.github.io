@@ -339,7 +339,7 @@ function offlinedb_get_xyz(url) {
   
   console.log(url);
   console.log("---");
-  
+
 
   if (url) {
       $.ajax({
@@ -357,11 +357,18 @@ function offlinedb_get_xyz(url) {
         success: function (result) {
               console.log(result);
 
-              /*var data = "";
+              var data = "";
               if (result) {
-                 data = $.csv.toArrays( result );
+                  data = $.csv.toArrays( result );
                   $.each(data, function( index1, row ) {
-                    if (index1 == 0) {
+                    
+                    console.log("index1 is ")
+                    console.log(index1)
+                    console.log("row is ")
+                    console.log(row)
+
+
+                    /*if (index1 == 0) {
                     } else {
                       $.each(row, function( index2, colData ) {
                         if ( isNaN(colData) ) {
@@ -372,8 +379,10 @@ function offlinedb_get_xyz(url) {
                           }
                         }
                       });
-                    }
+                    }*/
+
                   });
+                  /*
                   console.log("going to save comments for offlinedb_" + window.offlinedbChannel + "_" + vid);
 
                   var obj = {};
@@ -383,9 +392,9 @@ function offlinedb_get_xyz(url) {
                   worker1.postMessage(obj);
                   obj = null;
                   vid = null;
-                  return true;
+                  return true;*/
+
               }
-*/
         }
       });
     }
