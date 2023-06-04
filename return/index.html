@@ -219,20 +219,22 @@ a {
 <body class="body fade">
   <div id='about'>
   <small>
-  <a href='https://www.larsenscreamery.com/services/private_label_dev.html' title='Ask for or buy MelonieGold brand butter today!' target='_blank'>MelonieGold brand butter</a>  -
-  <span>All content is property of &amp; copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023. - </span>
-  <span><a href="https://biolithic.github.io/" title="See who is behind this and how you can join in">Credits (unofficial/fan made)</a></span>
+    <span>All comments are from &amp; property of <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac Go Boom</a> 2023. - </span>
+    <span><a href="https://biolithic.github.io/" title="Credits/Blame">Credits (unofficial/fan made)</a></span>
+    <span><a href="https://takingtherainbowback.com/" title="Rainbow - unrelated">Rainbow</a></span>
+    <span><a href="https://unsplash.com/@jorgefdezsalas" title="Photo Credits - unrelated">Photo Credits</a></span>
+    <br />
+    <span>The purpose of this is not to influence Melonie Mac to make any different content than what she wants, or for myself to get any recognition or favors or brownie points from this. It is to preserve history through the comments written by real humans that a person Melonie Mac made some videos once and those videos influenced other people in a positive way and brought praise to Jesus. Watching this screensaver is simple way to be encouraged in your own life. I just want to make it easy for people to get into videos and be encouraged from them, so I conceived of and made this by myself. Click on a quote to go to that video it is pulled from. Thank you for watching and have a wonderful rest of your day :)</span>
   </small>
-  </div>
+  
+  
 
-<!-- jorge-fernandez-salas-bUz7tSY7kQs-unsplash.jpg -->
+  </div>
 
 <div class="slideshow-container" id="goBoomGallery">
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-
-
 
 <script>
       /*! jQuery v1.8.2 jquery.com | jquery.org/license */
@@ -374,7 +376,6 @@ function get_positive_quotes_from_videos(url) {
         success: function (result) {
               var data = "";
               if (result) {
-                  // url 0bANCyJ-Nfw-youtube-comments.csv
                   var urlArr = url.split("-youtube-comments.csv");
                   var vidID = urlArr[0];
                   data = $.csv.toArrays( result );
@@ -383,7 +384,7 @@ function get_positive_quotes_from_videos(url) {
                       var rlen = row.length;
                       for (var i = 0, l = rlen; i < l; ++i) {
                         var g = document.getElementById("goBoomGallery");
-                        g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'<a href='https://www.youtube.com/watch?v=" + vidID  + "' target='_blank'>><h1 class='text'>" + row[i] + "</h1></a</div>");
+g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'><a href='https://www.youtube.com/watch?v=" + vidID  + "' target='_blank'><h1 class='text'>" + row[i] + "</h1></a</div>");
                       }
                     }
                   });
