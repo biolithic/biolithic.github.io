@@ -337,8 +337,8 @@ urls.forEach(function(url, key) {
 
 function offlinedb_get_xyz(url) {
   
-  console.log(url);
-  console.log("---");
+  // console.log(url);
+  // console.log("---");
 
 
   if (url) {
@@ -355,17 +355,16 @@ function offlinedb_get_xyz(url) {
           console.log(textStatus);
         },
         success: function (result) {
-              console.log(result);
+              console.log(xhr);
 
               var data = "";
               if (result) {
                   data = $.csv.toArrays( result );
                   $.each(data, function( index1, row ) {
                     
-                    console.log("index1 is ")
-                    console.log(index1)
+                    console.log("index1 is " + index1 + " url " + url) // 0 or 1 or 2...
                     console.log("row is ")
-                    console.log(row)
+                    console.log(row) // hang in there my sister in Christ. I hope you I are spoiling that little nephew of yours!
 
 
                     /*if (index1 == 0) {
