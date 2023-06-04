@@ -232,6 +232,7 @@ a {
   </div>
 
 <div class="slideshow-container" id="goBoomGallery">
+  <h2 id="loading">Loading...</h2>
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
@@ -354,6 +355,7 @@ urls.forEach(function(url, key) {
 
 
 setTimeout(function() { 
+  document.getElementById('loading').style.display = 'none';
   showSlides(window.slideIndex);
   setInterval(function () {  plusSlides(1);  }, 8000);
 }, 7000);
@@ -383,8 +385,11 @@ function get_positive_quotes_from_videos(url) {
                     if (row.length) {
                       var rlen = row.length;
                       for (var i = 0, l = rlen; i < l; ++i) {
-                        var g = document.getElementById("goBoomGallery");
+                        if (row[i].length > 1) {
+                          var g = document.getElementById("goBoomGallery");
 g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'><a href='https://www.youtube.com/watch?v=" + vidID  + "' target='_blank'><h1 class='text'>" + row[i] + "</h1></a</div>");
+                        }
+
                       }
                     }
                   });
