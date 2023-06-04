@@ -6,16 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Return</title>
 <script>
-      // Add a global error event listener early on in the page load, to help ensure that browsers
-      // which don't support specific functionality still end up displaying a meaningful message.
-      window.addEventListener('error', function(error) {
-        console.log(error);
-        if (error.message) {
-          alert(error.message);
-        }
-      });
-    </script>
-
+  window.addEventListener('error', function(error) {
+    console.log(error);
+    if (error.message) {
+      alert(error.message);
+    }
+  });
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,18 +24,18 @@
 <meta name="copyright" content="biolithic 2023" />
 <meta name="apple-mobile-web-app-title" content="Return">
 <meta name="application-name" content="Return">
-<title>Return - an unofficial introduction to Melonie Mac Go Boom compiled from Youtube comments</title>
+<title>Return - an unofficial introduction to Melonie Mac Go Boom compiled from Youtube video comments by viewers</title>
 <meta name="description" content="Return">
 
 <meta property="og:title" content="Return" />
-<meta property="og:description" content="Return - an unofficial introduction to Melonie Mac Go Boom compiled from Youtube comments" />
+<meta property="og:description" content="Return - an unofficial introduction to Melonie Mac Go Boom compiled from Youtube video comments by viewers" />
 <meta property="og:image" content="apple-touch-icon.png" />
-<meta property="og:url" content="https://biolithic.github.io/butter_believe_it">
+<meta property="og:url" content="https://biolithic.github.io/return">
 
 <meta property="twitter:title" content="Return" />
-<meta property="twitter:description" content="Return - an unofficial introduction to Melonie Mac Go Boom compiled from Youtube comments" />
+<meta property="twitter:description" content="Return - an unofficial introduction to Melonie Mac Go Boom compiled from Youtube video comments by viewers" />
 <meta property="twitter:image" content="apple-touch-icon.png" />
-<meta property="twitter:card" content="https://biolithic.github.io/butter_believe_it">
+<meta property="twitter:card" content="https://biolithic.github.io/return">
 
 <meta name="msapplication-TileColor" content="#f9de69">
 <meta name="theme-color" content="#f9de69">
@@ -54,7 +51,7 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 
-<link rel="canonical" href="https://biolithic.github.io/butter_believe_it"> 
+<link rel="canonical" href="https://biolithic.github.io/return"> 
 
 <style>
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -130,7 +127,7 @@ a {
 
 /* Caption text */
 .text {
-  color: #e7e7e7;
+  color: #000;
   font-size: 2rem;
   padding: 8px 12px;
   position: absolute;
@@ -168,19 +165,18 @@ a {
 /* Fading animation */
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
 }
 
 @keyframes fade {
   from {opacity: .4}
-  to {opacity: .95}
+  to {opacity: .99}
 }
 
 #goBoomGallery {
   position: absolute;
   top: 0px;
-  background: linear-gradient(10deg, rgba(255,255,170,1) 0%, rgba(221,221,221,1) 35%, rgba(255,255,119,1) 100%);
-  opacity: .5;
+  opacity: .75;
   min-height: 396px;
   width: -webkit-fill-available;
 }
@@ -318,116 +314,6 @@ if(!config.callback){return output;}else{config.callback('',output);}}};$.csvEnt
 
 
 
-
-function offlinedb_show_comments_by_video_id(e) {
-  if (e) {
-    e.preventDefault();
-    if (e.target) {
-      if (e.target.dataset) {
-        if (e.target.dataset.videoid) {
-          launch_toast("Start: Loading saved comments for video " + e.target.dataset.videoid + " if you clicked Get Data above.");
-          offlinedb_load_saved_comments(e.target.dataset.videoid);
-        }
-      }
-    }
-  }
-  return false;
-}
-
-
-
-function offlinedb_get_xyz(urlObj, blockedWordsToCheck) {
-  worker1.onmessage = receivedWorkerMessage;
-  worker1.onerror = workerError;
-
-  if (urlObj) {
-    if (urlObj.url) {
-      vid = urlObj.url;
-      vid = vid.replace('watch?v=', '');
-
-      $.ajax({
-        async: false,
-        timeout: 4000,
-        cache: false,
-        url: window.location.origin + "/" + window.offlinedbPath + "/" + window.offlinedbChannel + "/" + vid + "-youtube-comments" + ".csv",
-        contentType: "text/csv",
-        type: 'GET',
-        error: function (xhr, textStatus) {
-          console.log("AJAX error");
-          console.log(xhr);
-          console.log(textStatus);
-        },
-        success: function (result) {
-              var data = "";
-              if (result) {
-                 data = $.csv.toArrays( result );
-                  $.each(data, function( index1, row ) {
-                    if (index1 == 0) {
-                    } else {
-                      $.each(row, function( index2, colData ) {
-                        if ( isNaN(colData) ) {
-                          var bLength = blockedWordsToCheck.length;
-                          for (var i = 0, l = bLength; i < l; ++i) {
-                            colData = colData.replaceAll(blockedWordsToCheck[i], '****');
-                            data[index1][index2] = colData;
-                          }
-                        }
-                      });
-                    }
-                  });
-                  console.log("going to save comments for offlinedb_" + window.offlinedbChannel + "_" + vid);
-
-                  var obj = {};
-                  obj.vid = vid;
-                  obj.data = data;
-                  obj.channel = window.offlinedbChannel;
-                  worker1.postMessage(obj);
-                  obj = null;
-                  vid = null;
-                  return true;
-              }
-        }
-      });
-    }
-  }
-
-}
-
-
-
-function offlinedb_filesize_get(urlObj) {
-  if (urlObj) {
-    if (urlObj.url) {
-      vid = urlObj.url;
-      vid = vid.replace('watch?v=', '');
-      var xhr = $.ajax({
-        type: "HEAD",
-        url: window.location.origin + "/" + window.offlinedbPath + "/" + window.offlinedbChannel + "/" + vid + "-youtube-comments" + ".csv",
-        success: function(resp) {
-          if ( this.url ) {
-            var vidUrl = this.url;
-            vidUrl = vidUrl.replace(window.location.origin + "/" + window.offlinedbPath + "/" + window.offlinedbChannel + "/", '');
-            vidUrl = vidUrl.replace('-youtube-comments.csv', '');
-          }
-          offlinedb_filesize_save( vidUrl, xhr.getResponseHeader('Content-Length') );
-          return xhr;
-        }
-      });
-    } else {
-      return false;
-    }
-  } else {
-    return false;
-  }
-}
-
-
-
-
-
-
-
-
 window.slideIndex = 1;
 function plusSlides(n) {
   showSlides(window.slideIndex += n);
@@ -459,7 +345,7 @@ var p = $.when();
 urls.forEach(function(url, key) {
     p = p.then(function() { 
       if (url) {
-        return offlinedb_get_xyz(url);
+        return get_positive_quotes_from_videos(url);
       }
     });
 });
@@ -471,12 +357,7 @@ setTimeout(function() {
 }, 7000);
 
 
-function offlinedb_get_xyz(url) {
-  
-  // console.log(url);
-  // console.log("---");
-
-
+function get_positive_quotes_from_videos(url) {
   if (url) {
       $.ajax({
         async: false,
@@ -498,46 +379,14 @@ function offlinedb_get_xyz(url) {
                   var vidID = urlArr[0];
                   data = $.csv.toArrays( result );
                   $.each(data, function( index1, row ) {
-                    
-                    console.log("index1 is " + index1 + " url " + url) // 0 or 1 or 2...
-                    console.log("row is ")
-                    console.log(row) // hang in there my sister in Christ. I hope you I are spoiling that little nephew of yours!
-
                     if (row.length) {
                       var rlen = row.length;
                       for (var i = 0, l = rlen; i < l; ++i) {
                         var g = document.getElementById("goBoomGallery");
-                        g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'><h2 class='text'>" + row[i] + "</h2><a href='https://www.youtube.com/watch?v=" + vidID  + "' target='_blank'></a</div>");
+                        g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'<a href='https://www.youtube.com/watch?v=" + vidID  + "' target='_blank'>><h1 class='text'>" + row[i] + "</h1></a</div>");
                       }
                     }
-
-
-                    /*if (index1 == 0) {
-                    } else {
-                      $.each(row, function( index2, colData ) {
-                        if ( isNaN(colData) ) {
-                          var bLength = blockedWordsToCheck.length;
-                          for (var i = 0, l = bLength; i < l; ++i) {
-                            colData = colData.replaceAll(blockedWordsToCheck[i], '****');
-                            data[index1][index2] = colData;
-                          }
-                        }
-                      });
-                    }*/
-
                   });
-                  /*
-                  console.log("going to save comments for offlinedb_" + window.offlinedbChannel + "_" + vid);
-
-                  var obj = {};
-                  obj.vid = vid;
-                  obj.data = data;
-                  obj.channel = window.offlinedbChannel;
-                  worker1.postMessage(obj);
-                  obj = null;
-                  vid = null;
-                  return true;*/
-
               }
         }
       });
