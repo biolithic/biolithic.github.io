@@ -355,8 +355,6 @@ function offlinedb_get_xyz(url) {
           console.log(textStatus);
         },
         success: function (result) {
-              console.log(xhr);
-
               var data = "";
               if (result) {
                   data = $.csv.toArrays( result );
