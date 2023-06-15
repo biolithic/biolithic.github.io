@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js h-100" lang="en">
 <head>
-
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Butter Believe It</title>
@@ -22,34 +21,35 @@
 <meta property="og:title" content="Butter Believe It" />
 <meta property="og:description" content="Butter Believe It - an unofficial introduction to Melonie Mac Go Boom compiled from Youtube comments" />
 <meta property="og:image" content="apple-touch-icon.png" />
-<meta property="og:url" content="https://biolithic.github.io/butter_believe_it">
+<meta property="og:url" content="https://biolithic.github.io/butter_believe_it/">
 
 <meta property="twitter:title" content="Butter Believe It" />
 <meta property="twitter:description" content="Butter Believe It - an unofficial introduction to Melonie Mac Go Boom compiled from Youtube comments" />
 <meta property="twitter:image" content="apple-touch-icon.png" />
-<meta property="twitter:card" content="https://biolithic.github.io/butter_believe_it">
+<meta property="twitter:card" content="https://biolithic.github.io/butter_believe_it/">
 
 <meta name="msapplication-TileColor" content="#f9de69">
 <meta name="theme-color" content="#f9de69">
+<link crossorigin="use-credentials" rel="manifest" href="manifest.json" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="194x194" href="favicon-194x194.png">
-<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
-<link rel="mask-icon" href="safari-pinned-tab.svg" color="#f9de69">
 <link rel="shortcut icon" type="image/x-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#f9de69">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 
-<link rel="canonical" href="https://biolithic.github.io/butter_believe_it"> 
-
+<link rel="canonical" href="https://biolithic.github.io/butter_believe_it/"> 
+<script>
+  window.addEventListener('error', function(error) {
+    console.log(error);
+  });
+</script>
 <style>
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
-/*# sourceMappingURL=normalize.min.css.map */
-
 
 a {
   color: #848d96;
@@ -61,9 +61,9 @@ a {
   overflow: scroll;
   max-height: 100vh;
   font-family: Inter, sans-serif;
-  height: 100vh;
-  width: 100vw;
-  background-color: lightcyan;
+  height: 100%;
+  width: 100%;
+  background-color: #FFFF77;
 }
 
 section.gallery {
@@ -72,11 +72,6 @@ section.gallery {
   z-index: -1;
 }
 
-
-
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -84,7 +79,7 @@ section.gallery {
 }
 
 .cont{
-  width: 101%;
+  width: 99vw;
   height: 100vh;
   position:relative;
   overflow:hidden;
@@ -332,6 +327,7 @@ svg {
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  z-index: 100000;
 }
 
 /* Position the "next button" to the right */
@@ -348,13 +344,15 @@ svg {
 /* Caption text */
 .text {
   color: #e7e7e7;
-  font-size: 2rem;
+  font-size: 4rem;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
   width: 100%;
   text-align: center;
   font-family: 'Brush Script MT', cursive;
+  text-shadow: 1px 2px black;
+  max-width: 1200px;
 }
 
 /* Number text (1/3 etc) */
@@ -399,6 +397,7 @@ svg {
   background: linear-gradient(10deg, rgba(255,255,170,1) 0%, rgba(221,221,221,1) 35%, rgba(255,255,119,1) 100%);
   opacity: .5;
   min-height: 396px;
+  height: 91%;
   width: -webkit-fill-available;
 }
 
@@ -422,6 +421,7 @@ svg {
   body .text {
     color: #000;
     bottom: 0px;
+    font-size: 1.8rem;
   }
 
   #about {
@@ -434,7 +434,6 @@ svg {
     height: 99vh;
   }
 }
-
 </style>
 </head>
 <body class="body fade">
@@ -442,7 +441,7 @@ svg {
   <small>
   <a href='https://www.larsenscreamery.com/services/private_label_dev.html' title='Ask for or buy MelonieGold brand butter today!' target='_blank'>MelonieGold brand butter</a>  -
   <span>All content is property of &amp; copyright <a href='https://linktr.ee/meloniemac' target='_blank'>Melonie Mac</a> 2023. - </span>
-  <span><a href="https://biolithic.github.io/" title="See who is behind this and how you can join in">Credits (unofficial/fan made)</a></span>
+  <span><a href="https://linktr.ee/biolithic" title="See who is behind this and how you can join in">Credits (unofficial/fan made)</a></span>
   </small>
   </div>
 
@@ -483,8 +482,6 @@ svg {
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
-
-
 <script>
 window.slideIndex = 1;
 function plusSlides(n) {
@@ -509,21 +506,31 @@ function showSlides(n) {
 document.addEventListener("DOMContentLoaded", function() {
 
 (async () => {
-  let url = 'https://biolithic.github.io/goboom.json';
+  let url = window.location.origin + "/butter_believe_it/goboom.json";
   let response = await fetch(url);
   let videos = await response.json();
   var videosLength = videos.length;
 
   for (let i = 0; i < videosLength; i++) {
     var ii = i + 1;
-    var g = document.getElementById("goBoomGallery"); // sddefault
-    g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'><h2 class='text'>" + videos[i].quote + "</h2><a href='https://www.youtube.com/watch?v=" + videos[i].url + "' target='_blank'><img src='https://biolithic.github.io/" + videos[i].url + ".png' /></a</div>");
+    var g = document.getElementById("goBoomGallery");
+    g.insertAdjacentHTML("beforeend", "<div class='mySlides fade'><h2 class='text'>" + videos[i].quote + "</h2><a href='https://www.youtube.com/watch?v=" + videos[i].url + "' target='_blank'><img src='" + window.location.origin + "/butter_believe_it/images/" + videos[i].url + ".png' /></a</div>");
   }
  
   showSlides(window.slideIndex);
-  setInterval(function () {  plusSlides(1);  }, 8000);
+  setInterval(function () {  plusSlides(1);  }, 7000);
 })();
 
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+    .register( "sw.js")
+    .then(function() {
+      console.log( "Service Worker Registered" );
+    })
+    .catch(function( err ) {
+      console.log( "Service Worker Failed to Register", err );
+    });
+  }
 });
 </script>  
 </body>
