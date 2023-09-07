@@ -1,4 +1,4 @@
-/* Copyright 2023 biolithic. All rights reserved. 
+/* Copyright 2023 biolithic. All rights reserved.  odysee
 variable types:
 scbt...Is can be true or false
 scbt...Show can be 1 or 2 or 3 (show, blur, hidden)
@@ -1490,23 +1490,15 @@ function scbt_helper_get_options() {
       }
     }
 
-    // TODO
-    console.log('--------------- scbtvideoid is -------' + window.scbtvideoid);
-    console.log('--------------- scbtVODIs is -------' + window.scbtVODIs);
-
-setTimeout(function() {
-    if (window.scbtvideoid && window.scbtVODIs === false) {
-        console.log('--------------- YES is -------');
-        var chatElmArr = scbt_get_arr_chats(); 
-
-
-        [].forEach.call(chatElmArr, function(chatElm) {
-           scbt_helper_process_chat_line(chatElm, true);
-        });
-        scbt_helper_chat_listen();
-    }
-}, 3000);
-
+    setTimeout(function() {
+        if (window.scbtvideoid && window.scbtVODIs === false) {
+            var chatElmArr = scbt_get_arr_chats(); 
+            [].forEach.call(chatElmArr, function(chatElm) {
+               scbt_helper_process_chat_line(chatElm, true);
+            });
+            scbt_helper_chat_listen();
+        }
+    }, 3000);
 
     x = items = chatElmArr = chatElm = null;
   });
@@ -1680,7 +1672,7 @@ function scbt_user_chat_delete_by_videoid(e) {
   setTimeout(function(){
     var request = indexedDB.deleteDatabase(e.srcElement.dataset.dbname);
     request.onsuccess = function(e2) {
-      setTimeout(function(){ scbt_helper_toast('Status: Chat messages from this stream successfully deleted'); scbt_get_arr_of_all_dbnames(); }, 4000);
+      setTimeout(function(){ scbt_helper_toast('Status: Chat messages from this stream successfully deleted'); scbt_get_arr_of_all_dbnames(); }, 3000);
       e = e2 =dbName = request = error = null; return false;
     }
     request.onerror = function(error) {
@@ -1715,10 +1707,10 @@ function scbt_user_chat_mark_by_videoid(e) {
 
 function scbt_user_chat_export_by_videoid(e) {
   if (e) { } else { return false; }
+  if (e.preventDefault) { e.preventDefault(); }
   if (e.srcElement) { } else { return false; }
   if (e.srcElement.dataset) { } else { return false; }
   if (e.srcElement.dataset.dbname) { } else { return false; }
-  if (e.preventDefault) { e.preventDefault(); }
   
   window.scbtSearchingMessageIdsArr = [];
   var request = indexedDB.open(e.srcElement.dataset.dbname, 10);
@@ -1787,7 +1779,7 @@ function scbt_user_chat_export_by_videoid(e) {
       csvString = csvString.replace(/\/'"`/g, '');
       csvString = csvString.replace(/%3D/g, '');
       var blob = scbt_get_csv_file_from_str(csvString);
-      var csvName = e.srcElement.dataset.dbname + '&' + new Date().toISOString().slice(0, 10) + '-chatlog.csv';
+      var csvName = e.srcElement.dataset.dbname + '-chatlog.csv';
       scbt_helper_csv_download(blob, csvName);
       return false;
     };
@@ -1898,8 +1890,8 @@ function scbt_user_search_multiple_saved_chat(e) {
   labelMessage = ''; 
   if (e.target.id == 'scbtChatSearchStartsWithButton') {
     searchType = 'startswith';
-    toastMessage = t + ' beginning a message is being searched for';
-    toastMessage2 = t + ' not found starting message';
+    toastMessage = str + ' beginning a message is being searched for';
+    toastMessage2 = str + ' not found starting message';
     labelMessage = ' chat starting with: ' + str;
   }
   if (e.target.id == 'scbtChatSearchUserButton') {
@@ -2225,8 +2217,6 @@ function scbt_user_search_saved_chat(e) {
 
 
 function scbt_set_db_for_saving(dbName, startSaving) {
-  console.log('ZZZZ doing scbt_set_db_for_saving with: ' + dbName + ' ' + startSaving);
-
   if (!dbName) { 
     console.error('Error: chat database not supported');
     setTimeout(function(){ scbt_helper_toast('Error: chat database not supported'); }, 2700);
@@ -2326,26 +2316,12 @@ function scbt_set_db_save_chat_obj(obj) {
 
 
 function scbt_get_str_dbname(startSaving) {
-  
-  console.log('doing scbt_get_str_dbname withstartSaving: ' + startSaving); // (videoEl[0]) && 
-  console.log('doing scbt_get_str_dbname withscbtDbName: ' + window.scbtDbName);
-
   if (window.scbtDbName) {
     return window.scbtDbName;
   } else {
     
     var videoEl = scbt_get_arr_video_elem();
     var chatboxEl = scbt_get_arr_chatbox_elem();
-
-    console.log('doing scbt_get_str_dbname withvideoEl ');
-    console.log(videoEl);
-
-    console.log('doing scbt_get_str_dbname chatboxEl ');
-    console.log(chatboxEl);
-
-    console.log('doing scbt_get_str_dbname scbtserviceid: ' + window.scbtserviceid);
-    console.log('doing scbt_get_str_dbname scbtchannelid: ' + window.scbtchannelid);
-    console.log('doing scbt_get_str_dbname scbtvideoid: ' + window.scbtvideoid);
 
     if (
       (chatboxEl[0]) && 
@@ -2676,7 +2652,6 @@ async function scbt_user_search_for_saved_chat() {
   if (str && str2 && str3) {
     var dbStr = 'savedchat' + '&' + str + '&' + str2 + '&' + str3;
     var dbExists = await scbt_get_binary_if_db_exists(dbStr);
-    console.log('dbExists for indexeddb is: ' + dbExists);
     if (dbExists === true) {
       // loading chat database from indexeddb
       console.log('loading chat database from indexeddb');
@@ -2691,7 +2666,7 @@ async function scbt_user_search_for_saved_chat() {
 
   if (str && str2 && str3) {
     // loading chat database from web api
-    scbt_helper_load_chat_replay_from_api(str, str2, str3);
+    // scbt_helper_load_chat_replay_from_api(str, str2, str3);
     return false;
   }
 
@@ -2701,7 +2676,7 @@ async function scbt_user_search_for_saved_chat() {
 
 
 function scbt_helper_load_chat_replay_from_api(serviceid, channelid, videoid) {
-  fetch('https://www.streameranalytics.com/v1/api/' + serviceid + '/' + channelid + '/upload/list.json',
+  fetch('https://www.archyved.com/api/v1/' + serviceid + '/' + channelid + '/upload/list.json',
   {
     method: 'GET',
     mode: 'cors',
@@ -2741,7 +2716,7 @@ function scbt_helper_load_chat_replay_from_api(serviceid, channelid, videoid) {
 
 
 function scbt_helper_get_chat_for_replay_from_api(serviceid, channelid, videoid, chatlog) {
-   var response = fetch('https://www.streameranalytics.com/v1/api/' + serviceid + '/' + channelid + '/upload/uploads/' + chatlog)
+   var response = fetch('https://www.archyved.com/api/v1/' + serviceid + '/' + channelid + '/upload/uploads/' + chatlog)
     .then(response => response.text())
     .then(v => Papa.parse(v))
     .catch(err => console.log(err))
@@ -2869,7 +2844,7 @@ function scbt_helper_get_menu(app, element, thefile, firstTime) {
         if (elemArr[0]) {  elemArr[0].addEventListener('click', scbt_user_search_chat_toggle); }
 
         elemArr = document.body.getElementsByClassName('scbt24');
-        if (elemArr[0]) {  elemArr[0].addEventListener('click', scbt_user_search_for_saved_chat); }
+        if (elemArr[0]) {  elemArr[0].addEventListener('click', scbt_user_toggle_clips_menu); }
 
         return window.scbtSideMenuRef;
       } // if (element == 'scbtSideMenu') {
@@ -3100,6 +3075,10 @@ function scbt_helper_keybind_close() {
 
 
 function scbt_helper_options_turn_on_keybinds() {
+  window.scbtChatARef.textContent = '';
+  window.scbtChatBRef.textContent = '';
+  window.scbtChatTitleRef.classList.add('scbt-bl');
+
   window.addEventListener('keydown', function(e) {
 
     if ( (e.keyCode == '16') && (e.altKey === true) )  {
@@ -3121,6 +3100,7 @@ function scbt_helper_options_turn_on_keybinds() {
       console.log('you pressed Z + Alt to toggle the scbtChatToggleMenu');
       if (e.preventDefault) { e.preventDefault(); }
       if (window.scbtChatToggleMenuRef.classList.contains('scbt-bl') ) {
+        window.scbtChatToggleMenuRef.classList.remove('scbt-bl');
         scbt_helper_keybind_close();
         window.scbtChatInputRef.focus();
         return false;
@@ -3492,7 +3472,8 @@ function scbt_get_binary_role_from_chat_message(elem, parameter) {
   if (parameter == 'moderator') {
     if ( 
       (elem.classList.contains('moderator')) || 
-      (elem.querySelector('[data-v-43d962e8]') )
+      (elem.querySelector('[data-v-43d962e8]') ) || 
+      (elem.querySelector('path[style="fill: rgb(0, 199, 255);"]') ) 
     ) {
       toReturn = 1;
       elem = null; parameter = null; return toReturn;
@@ -3502,7 +3483,8 @@ function scbt_get_binary_role_from_chat_message(elem, parameter) {
   if (parameter == 'founder') {
     if ( 
       (elem.classList.contains('founder')) || 
-      (elem.querySelector('[data-v-8bcf93d3]'))
+      (elem.querySelector('[data-v-62b88e44]')) || 
+      (elem.querySelector('#badge-founder-gradient'))
     ) {
       toReturn = 1;
       elem = null; parameter = null; return toReturn;
@@ -3512,8 +3494,22 @@ function scbt_get_binary_role_from_chat_message(elem, parameter) {
   if (parameter == 'verified') {
     if ( 
       (elem.classList.contains('verified')) || 
+      (elem.classList.contains('vip')) || 
       (elem.querySelector('[data-v-899c5d7d]')) || 
-      (elem.querySelector('[data-v-935db34c]'))
+      (elem.querySelector('[data-v-935db34c]')) ||
+      (elem.querySelector('[data-v-f55c3249]')) || 
+      (elem.querySelector('#badge-verified-gradient'))
+    ) {
+      toReturn = 1;
+      elem = null; parameter = null; return toReturn;
+    }
+  }
+
+  if (parameter == 'vip') {
+    if ( 
+      (elem.classList.contains('vip')) || 
+      (elem.querySelector('[data-v-f55c3249]')) || 
+      (elem.querySelector('#badge-vip-gradient'))
     ) {
       toReturn = 1;
       elem = null; parameter = null; return toReturn;
@@ -3523,7 +3519,8 @@ function scbt_get_binary_role_from_chat_message(elem, parameter) {
   if (parameter == 'og') {
     if ( 
       (elem.classList.contains('og')) || 
-      (elem.querySelector('[data-v-935db34c]'))
+      (elem.querySelector('[data-v-935db34c]')) || 
+      (elem.querySelector('#badge-og-gradient-1'))
     ) {
       toReturn = 1;
       elem = null; parameter = null; return toReturn;
@@ -3533,7 +3530,9 @@ function scbt_get_binary_role_from_chat_message(elem, parameter) {
   if (parameter == 'owner') {
     if ( 
       (elem.classList.contains('owner')) || 
-      (elem.querySelector('[data-v-11d1cc91]'))
+      (elem.querySelector('[data-v-11d1cc91]')) || 
+      (elem.querySelector('[data-v-1c3105ea]')) || 
+      (elem.querySelector('#badge-host-gradient-1'))
     ) {
       toReturn = 1;
       elem = null; parameter = null; return toReturn;
@@ -3554,7 +3553,8 @@ function scbt_get_binary_role_from_chat_message(elem, parameter) {
   if (parameter == 'gifter') {
     if ( 
        (elem.classList.contains('gifter')) || 
-       (elem.querySelector('[data-v-abc]')) 
+       (elem.querySelector("svg g[clip-path='url(#clip0_301_17810)']")) || 
+       (elem.querySelector("svg g[clip-path='url(#clip0_301_17825)']"))
     ) {
       toReturn = 1;
       elem = null; parameter = null; return toReturn;
@@ -4153,7 +4153,6 @@ function scbt_handler_for_chat_mention_menu_usernames(e) {
 
 function scbt_handler_for_chat_mention_menu(e) {
   if (e.data == '@') {
-    console.log('we have an @ so continuing on');
     scbt_get_usernames_for_mention_menu();
     window.scbtMentionMenuRef.classList.add('scbt-bl');
     window.document.addEventListener('keydown', scbt_handler_for_chat_mention_menu_keystrokes);
@@ -4288,9 +4287,6 @@ function scbt_helper_chat_listen() {
   if (window.scbtOptions.observer) { return false; }
   targetNode = scbt_get_arr_chatbox_elem();
 
-  console.log('doing scbt_helper_chat_listen with targetNode:');
-  console.log(targetNode);
-
   if (targetNode[0]) {
     var config = { childList: true,
                  attributes: false,
@@ -4306,6 +4302,11 @@ function scbt_helper_chat_listen() {
                 var arrl = mutation.addedNodes.length;
                 for (var i=0; i < arrl; i++) { 
                   scbt_helper_process_chat_line(mutation.addedNodes[i], true);
+                  if (window.scbtOptions.scbtfeature8 === true) {
+                    var elem = document.body.querySelector('.overflow-y-scroll.py-3');
+                    var str = elem.scrollHeight;
+                    elem.scrollTop = "-" + str;
+                  }
                 }
               }  // if (mutation.addedNodes) {
             }   // end if (mutation.type === 'childList') {      
@@ -4559,9 +4560,6 @@ function scbt_helper_process_chat_line(elem, currentChatLine) {
     scbt_helper_chat_speak(obj.message);
   }
 
-  console.log('because we are saving? ' + window.scbtOptions.scbtfeature4 + ' ' + currentChatLine + '  going to save this chat line: ' + obj.username + ' MMM ' + obj.message + ' ' + obj.isBot + ' to DBNAME ' + window.scbtDbName);
-  console.log(obj);
-
   if (window.scbtDbName) { } else {  elem = currentChatLine = obj = null; return false; }
   if (obj.isBot > 0) {  elem = currentChatLine = obj = null; return false; }
   if ( (obj.itemid) && (obj.username) && (obj.message) ) { } else { elem = currentChatLine = obj = null; return false; }
@@ -4675,6 +4673,7 @@ function scbt_set_chat_parameter(parameter, visibility) {
 
 function scbt_user_chat_load_by_videoid(e) {
   if (!e) { return false; }
+  if (e.preventDefault) { e.preventDefault(); }
   if (!e.srcElement) { return false; }
   if (!e.srcElement.dataset) { return false; }
   if (!e.srcElement.dataset.dbname) { return false; }
@@ -4729,6 +4728,7 @@ function scbt_full_screen_video() {
 
 function scbt_user_go_to_stream(e) {
   if (!e) { return false; }
+  if (e.preventDefault) { e.preventDefault(); }
   if (!e.srcElement) { return false; }
   if (!e.srcElement.dataset) { return false; }
   if (!e.srcElement.dataset.channelid) { return false; }
@@ -4767,7 +4767,8 @@ function scbt_user_search_chat_toggle(e) {
   }
 
   if ( (window.scbtvideoid && window.scbtDbName) || (window.scbtDbNameToSearch != null) || (window.scbtMobileIs === true) || (str == 'scbtCloseButton') ) { } else { scbt_helper_toast('You can only search a stream chat on a livestream. Please find an active livestream.'); return false; }
-  
+  window.scbtChatTitleRef.classList.add('scbt-bl');
+
   if (e) {
     if (e.target) {
       if (e.target.id == 'scbt22') {
@@ -4897,7 +4898,9 @@ function scbt_user_toggle_chat_filter_menu() {
     if (window.scbtChatToggleMenuRef.classList.contains('scbt-bl') ) {
       window.scbtChatToggleMenuRef.classList.remove('scbt-bl');
       window.scbtChatToggleMenuRef.classList.remove('scbt-fl');
-      window.scbtChatTitleRef.classList.remove('scbt-bl');
+      // window.scbtChatTitleRef.classList.remove('scbt-bl');
+      window.scbtChatARef.textContent = '';
+      window.scbtChatBRef.textContent = '';
     } else {
       window.scbtChatToggleMenuRef.classList.add('scbt-bl');
       window.scbtChatToggleMenuRef.classList.add('scbt-fl');
@@ -5180,14 +5183,8 @@ function scbt_get_str_channelid() {
   }*/
   var arr1 = window.location.pathname.split('/@');
   var str = arr1[1];
-  console.log('scbt_get_str_channelid1 ' + str)
-
   var arr2 = str.split(':');
-  console.log('scbt_get_str_channelid2 ' + arr2)
-
   var channelid = arr2[0];
-  console.log('scbt_get_str_channelid3 ' + channelid)
-
   arr1 = str = arr2 = null;
   return channelid;
 }
@@ -5295,8 +5292,6 @@ function scbt_helper_chat_clean(obj, elem) {
 
 
 function scbt_helper_build_all_menus() {
-  console.log('doing scbt_helper_build_all_menus');
-
   var elemArr = [];
 
   elemArr = document.body.getElementsByClassName('scbtSideMenu');
@@ -6317,7 +6312,34 @@ function scbt_user_toggle_verified_chats() {
 }
 
 
+function scbt_user_toggle_clips_menu(e) {
+  if (e) { if (e.preventDefault) { e.preventDefault(); } }
 
+  if (window.scbtVODIs === true) {
+    scbt_user_search_for_saved_chat();
+    return false;
+  }
+
+  var elemArr = document.body.getElementsByClassName('scbtClipsToggleMenu');
+  if (elemArr[0]) {
+    if (elemArr[0].classList.contains('scbt-bl') ) {
+      elemArr[0].classList.remove('scbt-bl');
+    } else {
+      elemArr[0].classList.add('scbt-bl');
+    }
+  }
+  
+  var elemArr = document.body.getElementsByClassName('scbtClipsMenuWrapper');
+  if (elemArr[0]) {
+    if (elemArr[0].classList.contains('scbt-bl') ) {
+      elemArr[0].classList.remove('scbt-bl');
+    } else {
+      elemArr[0].classList.add('scbt-bl');
+    }
+  }
+
+  return false;
+}
 
 
 
@@ -6367,7 +6389,6 @@ function scbt_helper_load_options(clicked) {
       body.classList.add('scbt-desktop');
     }
     
-    console.log('scbt_helper_load_options one time scbtIsOdysee');
     var elemArr = document.body.getElementsByClassName('scbtX');
     if (elemArr[0]) { } else {
       body.insertAdjacentHTML('afterbegin', "<div id='scbtX' class='scbtX'> <button id='scbtToggleButton2' class='scbtToggleButton2 icon-button topbar-menu-button-avatar-button' aria-label='Click Me' aria-haspopup='false'><div></div><div></div><div></div></button>  <button id='scbtToggleButton' class='scbtToggleButton icon-button topbar-menu-button-avatar-button' aria-label='Click Me' aria-haspopup='false'>⚙</button></div>");        
@@ -6411,9 +6432,6 @@ function scbt_helper_load_options(clicked) {
   } // if window.scbtIsOdysee === true
 
 
-  // https://odysee.com/$/popout/@NightNationReview:5/NNR741:3
-  // https://odysee.com/@NightNationReview:5/NNR741:3
-  // https://odysee.com/@SydneyWatson:a/when-gamers-are-punished-for-protecting:0
   var myInterval = setInterval(function () {
     if ( window.location.href.indexOf('/$/popout/') > -1) {
       var elem2Arr = document.body.querySelectorAll('#app');
@@ -6423,7 +6441,6 @@ function scbt_helper_load_options(clicked) {
       var elem3Arr = document.body.querySelectorAll('header.header');
     }
     if (elem2Arr[0] && elem3Arr[0]) {
-      console.log('scbt_helper_load_options going to scbt_helper_build_all_menus');
       window.scbt1ElementRef = elem2Arr[0];
       window.scbt2ElementRef = elem3Arr[0];
       clearInterval(myInterval);
@@ -6436,14 +6453,13 @@ function scbt_helper_load_options(clicked) {
     var chatContainer = document.body.getElementsByClassName('livestream__comments');
     if ( (chatContainer[0]) && (chatContainer.id !='chatReplayContainer') ) {
       clearInterval(myInterval2);
-      console.log('scbt_helper_load_options this is a livestream 1');
 
       if ( window.location.href.indexOf('/chat/popup/') > -1) {
         window.scbtchannelid = null;
         window.scbtvideoid = null;
         window.scbtDbNameToSearch = null;
         window.scbtVODIs = false;
-        // https://odysee.com/$/popout/@NightNationReview:5/NNR741:3
+
         window.scbtvideoid = window.location.pathname;
         var arr1 = window.location.pathname.split('/$/popout/');
         if (arr1) {
@@ -6458,23 +6474,15 @@ function scbt_helper_load_options(clicked) {
         scbt_set_db_for_saving(window.scbtDbName, 'startSaving');
 
       } else {
-        
-        console.log('scbt_helper_load_options this is a livestream 2');
-
         window.scbtchannelid = scbt_get_str_channelid();
-        // if (!window.scbtchannelid) { return false; }
-        window.scbtvideoid = scbt_get_str_videoid();
-        // if (!window.scbtvideoid) { return false; }
         
-        console.log('channelid is ' + window.scbtchannelid);
-        console.log('videoid is ' + window.scbtvideoid);
+        window.scbtvideoid = scbt_get_str_videoid();
+        
 
         if (window.scbtDbName == null) {
-          console.log('scbt_helper_load_options this is a livestream 3');
           window.scbtVODIs = false;
           window.scbtDbName = null;
           window.scbtDbNameToSearch = null;
-          console.log('the livestream chat has loaded')
           scbt_get_str_dbname('startSaving');
         }  
       } 
@@ -6493,7 +6501,6 @@ function scbt_helper_load_options(clicked) {
         window.scbtDbName = null;
         window.scbtDbNameToSearch = null;
       }
-      console.log('scbt_helper_load_options this is a VOD');
       window.scbtVODIs = true;
       scbt_set_vod_length();
       if (window.scbtVODCommentsLoadedIs === false) {
@@ -6584,7 +6591,6 @@ chrome.runtime.onMessage.addListener(
       if (typeof request.tabUpdated === 'object') {
         if (request.tabUpdated.url) {
           if ( request.tabUpdated.url.indexOf('https://odysee.com/') > -1 ) {
-            console.log('request.tabUpdated.url load done');
             scbt_helper_load_options('clicked');
           }
         }
@@ -6592,13 +6598,11 @@ chrome.runtime.onMessage.addListener(
     }
 
   if (request.chatloaded && request.chatloaded == 'odyseebuddychatloaded') {
-    console.log(' *** ' + request.chatloaded);
     scbt_helper_load_options('clicked');
   }
 
   if (window.scbtKeybindOnIs === true) {
     if (request.message === 'odyseebuddycommand1') {
-      console.log('odyseebuddycommand1 command');
       scbt_user_command1();
     }
     if (request.message === 'odyseebuddycommand2') {

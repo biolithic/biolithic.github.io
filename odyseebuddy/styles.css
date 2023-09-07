@@ -196,7 +196,6 @@
 }
 
 .scbtChatWrapper {
-    display: block;
     position: absolute;
     background: #222;
     height: 300px;
@@ -464,16 +463,17 @@
 }
 
 .scbt-odysee.scbt-mobile .scbtChatTitle {
-    top: 68px;
+    top: 37%;
+    font-size: .7rem;
     display: block;
 }
 
 .scbt-odysee.scbt-mobile .scbtChatMenu {
-    top: 120px;
+    top: 39%;
 }
 
 .scbt-odysee.scbt-mobile .scbtChatWrapper {
-    top: 170px;
+    top: 47%;
     width: 100%;
     border: 1px black solid;
 }
