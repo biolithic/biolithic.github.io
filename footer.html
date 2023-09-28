@@ -1,0 +1,88 @@
+<style>
+footer.footer {
+	background-color: var(--footer-background-color);
+	color: var(--footer-text-color);
+	font-size: var(--footer-text-size);
+}
+
+footer.footer a {
+	color: var(--footer-link-color);
+}
+
+footer.footer a.icon, footer.footer a.icon img {
+	display: inline-block;
+	height: 1.5rem;
+	width: 1.5rem;
+	max-width: -webkit-fill-available;
+}
+
+#contactLinks,
+#contactIcons,
+#contactCopyright,
+#contactTOS,
+#contactDisclaimer {
+	display: inline-block;
+}
+
+@media all and (max-width: 768px) {
+	footer.footer a.icon, footer.footer a.icon img {
+		height: 2.5rem;
+	    width: 2.5rem;
+	}
+
+	#contactLinks,
+	#contactIcons,
+	#contactCopyright,
+	#contactTOS,
+	#contactDisclaimer {
+		display: block;
+		padding-top: 1.5rem;
+	}
+}
+</style>
+<footer class="footer" id="contact">
+  <div id="contactLinks">
+  	<span><a id="footerContact1" href='#' target='_blank'>Contact</a></span>
+  	<span><a id="footerContact2" href='#' target='_blank'>Us</a></span>
+  </div>
+
+	<div id="contactIcons">
+	<a id="footerEmail" href='#' target='_blank' class='icon'><img src="https://www.streameranalytics.com/email.svg" /></a>
+
+	<a id="footerTwitter" href='#' target='_blank' class='icon'>
+	<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+	</a>
+
+	<a id="footerGab" href='#' target='_blank' class='icon'>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.0"  viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="gab" class="svg-inline--fa fa-gab " role="img">
+	<g transform="translate(0,1024) scale(0.1,-0.1)" fill="#000000" stroke="none">
+	<path d="M4426 9444 c-367 -49 -753 -185 -1056 -373 -230 -143 -537 -422 -707 -641 -321 -416 -536 -930 -608 -1450 -22 -161 -30 -497 -16 -645 45 -464 167 -878 363 -1230 152 -274 286 -450 495 -656 243 -238 443 -384 703 -513 713 -353 1546 -364 2209 -31 191 96 328 195 510 370 l94 90 -7 -216 c-12 -402 -48 -608 -148 -848 -121 -291 -295 -503 -543 -663 -144 -93 -248 -136 -451 -187 -177 -43 -237 -51 -406 -52 -243 -1 -443 32 -688 116 -198 68 -500 217 -642 317 l-27 18 -55 -102 c-30 -57 -194 -364 -364 -683 l-309 -580 66 -49 c465 -344 1044 -564 1716 -651 192 -25 749 -17 955 14 499 74 920 213 1270 421 338 199 652 502 862 830 299 468 468 990 545 1690 15 142 17 389 20 2848 l4 2692 -911 0 -910 0 0 -262 0 -261 -112 109 c-124 121 -190 173 -319 257 -239 154 -518 255 -859 313 -136 23 -530 28 -674 8z m889 -1634 c86 -16 268 -77 350 -118 177 -88 365 -246 475 -399 208 -290 283 -656 204 -991 -120 -510 -532 -903 -1034 -987 -121 -21 -341 -16 -453 10 -180 40 -387 143 -543 269 -293 236 -463 587 -465 961 -1 277 104 562 300 808 173 218 497 406 779 452 96 16 286 13 387 -5z"/></g>
+	</svg>
+	</a>
+
+	<a id="footerDiscord" href='#' target='_blank' class='icon'>
+	<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" class="svg-inline--fa fa-discord " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"></path></svg>
+	</a>
+
+	<a id="footerGithub" href='#' target='_blank' class='icon'>
+	<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+	</a>
+
+	<a id="footerGitlab" href='#' target='_blank' class='icon'>
+		<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="gitlab" class="svg-inline--fa fa-gitlab " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M105.2 24.9c-3.1-8.9-15.7-8.9-18.9 0L29.8 199.7h132c-.1 0-56.6-174.8-56.6-174.8zM.9 287.7c-2.6 8 .3 16.9 7.1 22l247.9 184-226.2-294zm160.8-88l94.3 294 94.3-294zm349.4 88l-28.8-88-226.3 294 247.9-184c6.9-5.1 9.7-14 7.2-22zM425.7 24.9c-3.1-8.9-15.7-8.9-18.9 0l-56.6 174.8h132z"/></svg>
+	</a>
+</div>
+
+<div id="contactCopyright">
+  <span>This page and content and extension copyright <a id="footerCopyright" href='#' target='_blank'></a> 2023. All Rights Reserved. <a id="footerMadeIn" href='#' target='_blank'>Made in Frisco</a>, TX USA 🇺🇸</span>
+</div>
+<div id="contactTOS">
+  <span><a id="footerToS" href='#' target='_blank'>Terms of Service</a> - </span>
+  <span><a id="footerPP" href='#' target='_blank'>Privacy Policy</a> - </span>
+  <span><a id="footerDonate" href='#' target='_blank'>Support Financially</a></span>
+  <span><a href="https://linktr.ee/meloniemac" target='_blank'>Special Thanks to MelonieMac</a></span>
+</div>
+<div id="contactDisclaimer">
+  <span>This is a independent entity not connected, associated by, owned in part, or funded with or by any parent or affiliated company, any political party, political entity or elected official except the copyright entity.</span>
+</div>
+</footer>
