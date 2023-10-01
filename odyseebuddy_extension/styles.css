@@ -510,3 +510,40 @@
 .scbt-odysee .scbt-chat-timestamp, .scbt-odysee .scbt-chat-username {
     opacity: .7;
 }
+
+.scbt-odysee .scbtChatPreviousContent p, .scbt-odysee .scbtChatPreviousContent button {
+    display: block;
+    clear: both;
+}
+
+.fill-height-or-more {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.fill-height-or-more > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 150px;
+  overflow-y: scroll;
+}
+.some-area > div {
+  border-bottom: 1px solid black;
+}
+.some-area > div:nth-child(even) {
+  
+}
+.some-area > div:nth-child(odd) {
+  
+}
+.some-area > div p {
+  margin: 0;
+}
+.fill-height-or-more {
+    width: 0px;
+}
+.fill-height-or-more.has-content {
+    width: fit-content;
+}
