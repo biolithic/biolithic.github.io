@@ -1,0 +1,512 @@
+/* Copyright 2023 biolithic. All rights reserved. */
+
+.scbtToggleButton2 {
+     right: 0px;
+     position: absolute;
+     top: 0px;
+     height: 50px;
+     width: 50px;
+     background: #CA004B;
+     font-size: xx-large;
+     color: silver;
+     line-height: 0.5rem;
+     z-index: 11111111;
+}
+
+.scbtToggleButton2 div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0px 6px 0.5rem;
+}
+
+.scbtToggleButton2:hover, 
+.scbtToggleButton2:focus, 
+.scbtToggleButton2:active  
+{
+     background: darkgray;
+}
+
+.scbtSideMenu button:hover, 
+.scbtSideMenu button:focus, 
+.scbtSideMenu button:active,
+.scbtSideMenu button.focused, 
+
+.scbtChatMenu button:hover, 
+.scbtChatMenu button:focus, 
+.scbtChatMenu button:active,
+.scbtChatMenu button.focused,
+
+.scbtChatToggleMenu button:hover, 
+.scbtChatToggleMenu button:focus, 
+.scbtChatToggleMenu button:active,
+.scbtChatToggleMenu button.focused,
+
+.scbtOptionsSavedWrapper .round-button:hover, 
+.scbtOptionsSavedWrapper .round-button:focus, 
+.scbtOptionsSavedWrapper .round-button:active, 
+.scbtOptionsSavedWrapper .round-button.focused, 
+
+.az2:hover, 
+.az2:focus, 
+.az2:active,
+.az2.focused, 
+
+.az3:hover, 
+.az3:focus, 
+.az3:active,
+.az3.focused, 
+
+.az4:hover, 
+.az4:focus, 
+.az4:active,
+.az4.focused, 
+
+.az5:hover, 
+.az5:focus, 
+.az5:active,
+.az5.focused, 
+
+.az6:hover, 
+.az6:focus, 
+.az6:active,
+.az6.focused
+{
+     background: #CA004B !important;
+     border: 1px solid #fff;
+}
+
+.scbt-options-wrapper, 
+.scbtOptionsMenu, 
+.scbtMentionMenu, 
+.scbtChatMenu, 
+.scbtChatTitle,
+.scbtChatWrapper,
+.scbtToggleButton,
+.scbtToggleButton2,
+.scbtSideMenu,
+.scbtChatToggleMenu,
+.scbt-mobile .scbt7,
+.scbt-mobile .scbt10,
+.scbt-mobile .scbt16,
+.scbt-mobile .scbt17, 
+#scbtLoading
+{
+    display: none;
+}
+
+.scbt-mobile .scbtToggleButton2, 
+.scbt-options-wrapper.scbt-bl, 
+.scbtSideMenu.scbt-bl,
+.scbtChatToggleMenu.scbt-bl,
+.scbtOptionsMenu.scbt-bl,
+.scbtChatWrapper.scbt-bl,
+.scbtChatTitle.scbt-bl 
+{
+     display: block;
+}
+
+.scbt-options-wrapper.scbt-fl,
+.scbtChatMenu.scbt-fl
+{
+     display: flex;
+}
+
+.scbt-chat-timestamp, 
+.scbt-chat-author, 
+.scbt-options-title, 
+.round-button, 
+.scbtChatPreviousContent span, 
+.scbtToggleButton2,
+.scbtSideMenu button, 
+.scbtChatToggleMenu span, 
+.scbtCloseButton,
+.scbtChatMenu button,
+.scbtOptionsMenu button,
+.scbt-kick .scbt-speed li
+{
+    cursor: pointer;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#scbtSnackbar {
+     visibility: hidden;
+     min-width: 250px;
+     background-color: #333;
+     text-align: center;
+     border-radius: 2px;
+     padding: 16px;
+     position: fixed;
+     z-index: 1111111;
+     color: #ccc;
+     right: 0px;
+     bottom: 5px;
+     font-size: medium;
+}
+
+ #scbtSnackbar.show {
+     visibility: visible;
+     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+     animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.scbtOptionsMenuForm {
+    clear: both;
+}
+
+.scbtOptionsMenuForm input {
+     font-size: 2rem;
+}
+
+.scbtOptionsMenuForm input[type="text"] {
+
+}
+
+.scbtSideMenu,
+.scbtChatToggleMenu {
+    position: fixed;
+    top: 305px;
+    z-index: 10000000;
+    background: black;
+    right: 0px;
+}
+
+.scbtChatToggleMenu {
+     top: 355px;
+}
+
+.scbtSideMenu button,
+.scbtChatToggleMenu button {
+    display: inline-block;
+    width: 40px;
+    height: 45px;
+    font-size: 1.75rem;
+    color: #fff;
+}
+
+.scbtChatWrapper {
+    position: absolute;
+    background: #222;
+    height: 300px;
+    z-index: 10000;
+    overflow-y: scroll;
+    top: 400px;
+}
+
+.scbtCloseButton {
+     position: absolute;
+     right: 40px;
+     z-index: 10000000;
+}
+
+.scbtCloseButton:hover {
+     opacity: 1;
+}
+ 
+.scbtCloseButton:before,
+.scbtCloseButton:after {
+     position: absolute;
+     left: 15px;
+     content: ' ';
+     height: 33px;
+     width: 2px;
+     background-color: #ddd;
+}
+
+.scbtCloseButton:before {
+    transform: rotate(45deg);
+}
+
+.scbtCloseButton:after {
+    transform: rotate(-45deg);
+}
+
+.scbtChatTitle {
+    position: absolute;
+    color: red;
+    z-index: 1000000;
+    background: #222;
+    left: 0px;
+    top: 380px;     
+}
+
+.scbtChatMenu {
+     position: absolute;
+     top: 350px;
+     right: 0px;
+     z-index: 1000;
+     min-width: fit-content;
+     width: 100%;
+     background: lightgrey;
+     height: 50px;
+     align-items: center;
+     justify-content: space-between;
+}
+
+.scbtChatSearchInputText {
+     width: 30%;
+     height: 50px;
+     background: lightgray;
+     color: #000;
+}
+ 
+.scbtChatMenu button {
+     justify-content: space-between;
+     height: 50px;
+     background: black;
+     color: white;
+     min-width: 60px;
+     padding-left: 0.5rem;
+     display: flex;
+}
+
+.scbtChatMenu button.scbt-multiple {
+     background: green;
+}
+
+.scbt-deactivated {
+     opacity: .4;
+}
+
+.scbtLoading {
+    display: none;
+    background: #666;
+    position: absolute;
+    margin: 0 auto;
+    height: 60px;
+    width: 60px;
+    z-index: 10000;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+
+.scbt-desktop .scbtSideMenu {
+     top: 0px;
+}
+
+.scbt-desktop .scbtChatToggleMenu {
+     top: 45px;
+}
+
+.scbt-desktop .scbtSideMenu button, 
+.scbt-desktop .scbtChatToggleMenu button {
+     font-size: 1.25rem;
+     width: fit-content;
+}
+
+.scbt-desktop .scbtChatMenu {
+     top: 0px;
+     right: 235px;
+     width: fit-content;     
+}
+
+.scbt-desktop .scbtChatWrapper {
+     top: 100px;
+     max-width: 400px;
+     right: 0px;
+     left: initial;
+     height: 85vh;
+}
+
+.scbt-desktop .scbtChatTitle {
+     left: unset;
+     right: 80px;
+     top: 70px;
+}
+
+.scbtOptionsMenuForm > div {
+    max-height: 100px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.scbtOptionsMenuForm > div::-webkit-scrollbar {
+  width: 20px;
+}
+
+.scbtOptionsMenuForm > div::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+.scbtOptionsMenuForm > div::-webkit-scrollbar-thumb {
+  background: #CA004B; 
+  border-radius: 10px;
+}
+
+.scbtOptionsMenuForm > div::-webkit-scrollbar-thumb:hover {
+  background: #D4D4D4; 
+}
+
+ 
+
+
+
+.scbt-odysee.scbt-mobile .scbtSideMenu,
+.scbt-odysee.scbt-mobile .scbtChatToggleMenu {
+    top: 0px;
+    right: unset;
+    left: 0px;
+}
+
+.scbtChatToggleMenu {
+     top: 355px;
+}
+
+
+.scbtOptionsThemeTitle, 
+.scbtOptionsHighlightTitle, 
+.scbtOptionsMuteTitle, 
+.scbtOptionsHideTitle, 
+.scbtOptionsFeaturesTitle, 
+.scbtOptionsSavedTitle, 
+.scbtOptionsImportTitle {
+    overflow: auto;
+}
+
+.scbt-odysee .scbtChatPreviousContent {
+    text-align: left;
+    display: block;
+}
+
+.scbt-odysee.scbt-mobile .scbtChatToggleMenu {
+    top: 42px;
+}
+
+.scbt-odysee .scbtOptionsMenu {
+    position: relative;
+    z-index: 11111;
+    background: #CA004B;
+}
+
+
+.scbt-odysee #scbthighlighted8Wrapper,
+.scbt-odysee #scbthighlighted9Wrapper,
+.scbt-odysee #scbthighlighted11Wrapper {
+    visibility: hidden;
+}
+
+
+#scbtMentionMenu {
+     display: none;
+     position: absolute;
+     z-index: 100;
+     bottom: 70px;
+     right: 5px;
+}
+
+#scbtMentionMenu.scbt-bl {
+     display: block;
+     background: #777;
+     padding: 0.5rem;
+}
+
+#scbtMentionMenu li {
+     list-style-type: none;
+}
+
+#scbtMentionMenu li:active,
+#scbtMentionMenu li:hover,
+#scbtMentionMenu li:focus {
+     color: #85C742;
+}
+
+#scbtMentionMenu ul {
+     padding-left: 0px;
+     padding-right: 75px;
+     width: 100%;
+}
+
+#scbtMentionMenu .emoji-picker {
+     width: fit-content;
+}
+
+#scbtMentionMenu .emoji-picker__content {
+     overflow-y: scroll;
+}
+
+.emoji-picker__wrapper-shown {
+     display: block !important;
+     position: absolute;
+     transform: translate(1089px, 15px, 0px);
+     inset: auto auto 0px 0px;
+}
+
+.scbt-odysee.scbt-mobile .scbtSideMenu, 
+.scbt-odysee.scbt-mobile .scbtChatToggleMenu {
+    width: -webkit-fill-available;
+}
+
+.scbt-odysee.scbt-mobile .scbtSideMenu button, 
+.scbt-odysee.scbt-mobile .scbtChatToggleMenu button {
+    width: 10%;
+}
+
+.scbt-odysee.scbt-mobile .scbtToggleButton2,
+.scbt-odysee.scbt-mobile .scbtChatTitle,
+.scbt-odysee.scbt-mobile .scbtChatMenu,
+.scbt-odysee.scbt-mobile .scbtChatWrapper {
+    position: fixed;
+}
+
+.scbt-odysee.scbt-mobile .scbtChatTitle {
+    top: 37%;
+    font-size: .7rem;
+    display: block;
+}
+
+.scbt-odysee.scbt-mobile .scbtChatMenu {
+    top: 39%;
+}
+
+.scbt-odysee.scbt-mobile .scbtChatWrapper {
+    top: 47%;
+    width: 100%;
+    border: 1px black solid;
+}
+
+.scbt-odysee .scbtOptionsMenuForm input {
+    height: 45px;
+    width: 45px;
+    color: #000;
+    background: #555;
+}
+
+.scbt-odysee .scbt-options-wrapper {
+    background-color: #777;
+}
+
+.scbt-odysee .scbtOptionsMenuForm .scbtChatLog {
+    display: block;
+    width: 200px;
+}
+
+.scbt-odysee .scbtChatWrapper {
+    background-color: #ccc;
+}
+
+.scbt-odysee .scbtChatSearchFullButton, .scbt-odysee .scbtCloseButton::before, .scbt-odysee .scbtCloseButton::after {
+    color: #000;
+}
+
+.scbt-odysee .scbtChatTitle {
+    top: 5.5rem;
+    right: 2px;
+}
+
+.scbt-odysee .scbt-chat-timestamp, .scbt-odysee .scbt-chat-username {
+    opacity: .7;
+}
