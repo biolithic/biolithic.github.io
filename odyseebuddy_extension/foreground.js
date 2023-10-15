@@ -2793,7 +2793,9 @@ async function scbt_user_search_for_saved_chat() {
       scbt_user_chat_load_by_videoid(e);
       return false;
     }    
-    scbt_helper_load_local_chat_from_api(serviceidStr, channelidStr, videoidStr);
+    if (window.scbtserviceid == 'kick') {
+      scbt_helper_load_local_chat_from_api(serviceidStr, channelidStr, videoidStr);
+    }
   }
   
   if (serviceidStr && channelidStr && videoidStr) {
@@ -4482,7 +4484,7 @@ function scbt_handler_sort_saved_streams_by_current(e) {
   }
   
   for (var i = 0; i < arrl; i++) {
-    if (window.scbtSavedStreamsArr[i].channelid == str) {
+    if (window.scbtSavedStreamsArr[i].channelid.toLowerCase() == str) {
       arr.unshift(window.scbtSavedStreamsArr[i]);
     } else {
       arr.push(window.scbtSavedStreamsArr[i]);
