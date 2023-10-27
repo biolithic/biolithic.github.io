@@ -4990,7 +4990,12 @@ function scbt_user_go_to_stream(e) {
 
 
 function scbt_user_search_chat_toggle(e) {
-  if (!window.scbtDbNameToSearch) { scbt_helper_toast( ' No active stream or VOD chat '); return false; } 
+  if (!window.scbtDbNameToSearch) { 
+    window.scbtChatTitleRef.classList.remove('scbt-bl');
+    scbt_user_search_chat_toggle_close();
+    scbt_helper_toast( ' No active stream or VOD chat '); 
+    return false;
+  } 
 
   var str = 'abcxyz';
   if (e) {
@@ -5026,6 +5031,18 @@ function scbt_user_search_chat_toggle(e) {
 
   // opening
   if (window.scbtSearchBarActiveIs === false) {
+    scbt_user_search_chat_toggle_open();
+    return false;
+  }
+  // closing
+  if (window.scbtSearchBarActiveIs === true) {
+    scbt_user_search_chat_toggle_close();
+    return false;
+  }
+}
+
+
+function scbt_user_search_chat_toggle_open() {
     window.scbtChatContentRef.innerHTML = '';
     if (window.scbtSearchChat == 'current') {
       window.scbtChatARef.textContent = 'Search this stream chat';
@@ -5042,10 +5059,10 @@ function scbt_user_search_chat_toggle(e) {
     window.scbtChatSearchInputTextRef.focus();
     window.scbtSearchBarActiveIs = true;
     return false;
-  }
+}
 
-  // closing
-  if (window.scbtSearchBarActiveIs === true) {
+
+function scbt_user_search_chat_toggle_close() {
     window.scbtChatContentRef.innerHTML = '';
     window.scbtChatARef.textContent = '';
     window.scbtChatBRef.textContent = '';
@@ -5064,8 +5081,6 @@ function scbt_user_search_chat_toggle(e) {
     window.scbtSearchBarActiveIs = false;
     window.scbtDbNameToSearch = window.scbtDbName;
     return false;
-  }
-
 }
 
 
