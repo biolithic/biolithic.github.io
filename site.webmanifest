@@ -1,19 +1,19 @@
 {
-    "name": "Biolithics Services",
-    "short_name": "Biolithics Services",
+    "name": "Biolithic 2025",
+    "short_name": "Biolithic 2025",
     "icons": [
         {
-            "src": "https://www.streameranalytics.com/android-chrome-192x192.png",
+            "src": "https://biolithic.github.io/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://www.streameranalytics.com/android-chrome-512x512.png",
+            "src": "https://biolithic.github.io/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#777",
-    "background_color": "#777",
+    "theme_color": "#80d890",
+    "background_color": "#80d890",
     "display": "standalone"
 }
