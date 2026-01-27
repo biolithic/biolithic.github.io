@@ -1,9 +1,9 @@
-const cacheName = "meloniemaccroftygoals-v6";
+const cacheName = "meloniemaccroftygoals-v7";
 const coreAssets = [
 
 "/crofty_goals/",
 "/crofty_goals/index.html",
-"/crofty_goals/manifest.json",
+"/crofty_goals/manifest.webmanifest",
   
 "/crofty_goals/android-chrome-192x192.png",
 "/crofty_goals/android-chrome-512x512.png",

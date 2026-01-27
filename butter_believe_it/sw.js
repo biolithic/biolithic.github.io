@@ -1,10 +1,10 @@
-const cacheName = "meloniemacbutterbelieveit-v6";
+const cacheName = "meloniemacbutterbelieveit-v7";
 const coreAssets = [
 
 "/butter_believe_it/",
 "/butter_believe_it/index.html",
 "/butter_believe_it/goboom.json",
-"/butter_believe_it/manifest.json",
+"/butter_believe_it/manifest.webmanifest",
   
 "/butter_believe_it/android-chrome-192x192.png",
 "/butter_believe_it/android-chrome-512x512.png",

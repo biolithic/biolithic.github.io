@@ -1,9 +1,9 @@
-const cacheName = "meloniemacreturn-v6";
+const cacheName = "meloniemacreturn-v7";
 const coreAssets = [
 
 "/return/",
 "/return/index.html",
-"/return/manifest.json",
+"/return/manifest.webmanifest",
   
 "/return/android-chrome-192x192.png",
 "/return/android-chrome-512x512.png",
