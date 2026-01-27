@@ -1,7 +1,12 @@
 {
-    "name": "Biolithic 2025",
-    "short_name": "Biolithic 2025",
+    "name": "Biolithic 2026",
+    "short_name": "Biolithic 2026",
     "icons": [
+        {
+            "src": "https://biolithic.github.io/icon.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512"
+        },
         {
             "src": "https://biolithic.github.io/android-chrome-192x192.png",
             "sizes": "192x192",
@@ -13,7 +18,23 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#80d890",
-    "background_color": "#80d890",
-    "display": "standalone"
+    "theme_color": "#ff0000",
+    "background_color": "#ff0000",
+    "display": "standalone",
+    "start_url": "https://biolithic.github.io/",
+
+    "screenshots": [
+    {
+      "src": "https://biolithic.github.io/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "https://biolithic.github.io/android-chrome-512x512.png",
+      "type": "image/jpg",
+      "sizes": "720x540",
+      "form_factor": "wide"
+    }
+  ]
 }

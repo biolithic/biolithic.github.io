@@ -1,0 +1,12 @@
+/biolithic
+/pages
+biolithic/
+pages/
+/vendor
+/node_modules
+/build
+.DS_Store
+*.pem
+.env*.local
+.env
+
