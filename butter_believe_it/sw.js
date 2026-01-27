@@ -1,4 +1,4 @@
-const cacheName = "meloniemacbutterbelieveit-v7";
+const cacheName = "meloniemacbutterbelieveit-v8";
 const coreAssets = [
 
 "/butter_believe_it/",

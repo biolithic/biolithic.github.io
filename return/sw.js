@@ -1,4 +1,4 @@
-const cacheName = "meloniemacreturn-v7";
+const cacheName = "meloniemacreturn-v8";
 const coreAssets = [
 
 "/return/",

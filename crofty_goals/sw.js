@@ -1,4 +1,4 @@
-const cacheName = "meloniemaccroftygoals-v7";
+const cacheName = "meloniemaccroftygoals-v8";
 const coreAssets = [
 
 "/crofty_goals/",
